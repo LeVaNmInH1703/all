@@ -1,52 +1,37 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset='utf-8'>
-    <title>index.html</title>
+  <head>
+    <meta charset="utf-8" />
+    <title>Lê Văn Minh</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="main.css" />
+    <script src="main.js"></script>
     <style>
-        body{
-            margin: 0;
-            align-items: center;
-            background-color: #333;
-            height: 100vh;
-            display: flex;
-        }
-        .container{
-            margin: 50vh auto;
-        }
-        ul{
-            padding-left: 0;
-            margin: 0;
-            display: flex;
-        }
-        li{
-            list-style: none;
-        }
-        .link:hover{
-            opacity: 0.7;
-            cursor: pointer;
-        }
-        .link{
-             padding: 10px 20px;
-            border-radius: 100px;
-            background-color: orangered;
-            color: #fff;
-            text-decoration: none;
-        }
-        li+li{
-            margin-left: 16px;
-        }
+      body {
+        background-color: #333;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100vw;
+        flex-direction: column;
+      }
+      a {
+        margin-top: 20px;
+        text-decoration: none;
+        padding: 10px 15px;
+        background-color: orangered;
+        font-family: sans-serif;
+        color: #fff;
+        border-radius: 5px;
+      }
+      a:hover {
+        background-color: rgb(23, 156, 0);
+      }
     </style>
-</head>
-<body>
-    <div class="container">
-        <ul>
-            <li><a class="link" href="nav-bar.html" >nav-bar</a></li>
-            <li><a class="link" href="page-content.html">page-content</a></li>
-            <li><a class="link" href="simple-website.html">simple-website</a></li>
-            <li><a class="link" href="exam-results.html">exam-results</a></li>
-        </ul>
-    </div>
-    
-</body>
+  </head>
+  <body>
+    <a href="turnOnLight/index.html">Turn on the light</a>
+  </body>
 </html>
