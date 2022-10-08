@@ -2,10 +2,45 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>Light</title>
+    <title>light</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="main.css" />
     <script src="main.js"></script>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100vw;
+        background: radial-gradient(farthest-side, #fff, #fff, #333);
+      }
+      button {
+        padding: 10px 20px;
+        background-color: #999;
+        border: none;
+        border-radius: 5px;
+      }
+      button:hover {
+        background: rgb(0, 255, 191);
+      }
+      img {
+        height: 30vh;
+        width: 10vw;
+      }
+    </style>
   </head>
-  <body></body>
+  <body>
+    <button
+      onclick="document.getElementsByTagName('img')[0].src='images/turnoff.PNG'"
+    >
+      Tắt đèn
+    </button>
+    <img src="images/turnoff.PNG" alt="" />
+    <button
+      onclick="document.getElementsByTagName('img')[0].src='images/turnon.jfif'"
+    >
+      Bật đèn
+    </button>
+  </body>
 </html>

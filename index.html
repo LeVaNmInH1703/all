@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="main.css" />
     <script src="main.js"></script>
     <style>
+      * {
+        border-radius: 5px;
+      }
       body {
         background-color: #333;
         color: #fff;
@@ -15,10 +18,10 @@
         align-items: center;
         height: 100vh;
         width: 100vw;
-        flex-direction: column;
+        margin: auto;
       }
       a {
-        margin-top: 20px;
+        margin: 20px;
         text-decoration: none;
         padding: 10px 15px;
         background-color: orangered;
@@ -29,9 +32,19 @@
       a:hover {
         background-color: rgb(23, 156, 0);
       }
+      .tagImg {
+        display: flex;
+        flex-direction: column;
+        background-image: url("images/tagImg.png");
+        border-radius: 5px;
+      }
     </style>
   </head>
   <body>
     <a href="turnOnLight/index.html">Turn on the light</a>
+    <div class="tagImg">
+      <a href="tagImg/filter/imgFilter.html">Tag img filter</a>
+      <a href="tagImg/overLay/imgOverlay.html">Tag img overlay</a>
+    </div>
   </body>
 </html>
