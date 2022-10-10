@@ -17,11 +17,6 @@ start.onclick = () => {
     td = 6;
     rotate();
 }
-start.touchdown = () => {
-    box.style.animation = '';
-    td = 6;
-    rotate();
-}
 
 so1.onclick = () => {
     box.style.animation = '';
