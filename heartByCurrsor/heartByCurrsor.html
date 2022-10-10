@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>hay ho phết</title>
+    <style>
+      body {
+        margin: 0;
+        height: 100vh;
+        background-color: black;
+        overflow: hidden;
+      }
+
+      span {
+        background: url("https://cdn4.iconfinder.com/data/icons/general-office/91/General_Office_54-512.png");
+        /* background: url("https://i.pinimg.com/564x/2a/16/ac/2a16aca8e0a4ac5cd1ceb0fec44a339c.jpg"); */
+        /* background: url("https://cdn4.iconfinder.com/data/icons/emojis-flat-pixel-perfect/64/emoji-03-256.png"); */
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        pointer-events: none;
+        background-size: cover;
+        /* Tự chia tỷ lệ tới kích thước lớn nhất của chiều rộng hoặc chiều cao để phù hợp với vùng nội dung */
+        /* left: 50%;
+        top: 50%; */
+        transform: translate(-50%, -50%);
+        animation: animate 20s linear;
+      }
+
+      @keyframes animate {
+        0% {
+          transform: translate(-50%, -50%);
+          opacity: 1;
+          filter: hue-rotate(0);
+          /* Bộ lọc hue-rotate giúp chúng ta có tất cả các màu khác không phải là màu đen và trắng. */
+        }
+        100% {
+          transform: translate(-50%, -5000%);
+          opacity: 0;
+          filter: hue-rotate(720deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      const bodyEl = document.querySelector("body");
+
+      bodyEl.addEventListener("mousemove", (event) => {
+        const xPos = event.offsetX;
+        const yPos = event.offsetY;
+        const spanEl = document.createElement("span");
+        spanEl.style.left = xPos + "px";
+        spanEl.style.top = yPos + "px";
+        const size = Math.random() * 200;
+        spanEl.style.width = size + "px";
+        spanEl.style.height = size + "px";
+        bodyEl.appendChild(spanEl);
+        setTimeout(() => {
+          spanEl.remove();
+        }, 5000);
+      });
+    </script>
+  </body>
+</html>

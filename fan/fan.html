@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Fan</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="main.css" />
+    <style>
+      body {
+        height: 100vh;
+        width: 50vw;
+        margin: auto;
+        background-color: #f5f5f5;
+        align-items: center;
+      }
+      div {
+        position: relative;
+      }
+      #box {
+        position: absolute;
+        top: 15%;
+        left: 20%;
+        border-radius: 300px;
+        width: 43%;
+      }
+      @keyframes quay {
+        from {
+          transform: rotate(0);
+        }
+        to {
+          transform: rotate(10368000deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <img src="fan.jpg" alt="" id="box1" />
+      <img src="canh-quat.PNG" alt="" id="box" />
+    </div>
+    <button id="start">start</button>
+    <button id="so1">1</button>
+    <button id="so2">2</button>
+    <button id="so3">3</button>
+    <button id="stop">Stop</button>
+  </body>
+  <script src="main.js"></script>
+</html>

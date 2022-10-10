@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Heart</title>
+    <style>
+      body {
+        margin: 0;
+        height: 100vh;
+        background-color: black;
+        overflow: hidden;
+      }
+      span {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        /* background: url(https://cdn0.iconfinder.com/data/icons/love-hand-drawn-color/64/heart-128.png); */
+        background: url(https://cdn4.iconfinder.com/data/icons/general-office/91/General_Office_54-512.png);
+        /* animation: animate linear 7s; */
+        pointer-events: none;
+        background-size: cover;
+        transform: translate(-50%, -50%);
+      }
+      .text {
+        color: #fff;
+      }
+      @keyframes animate {
+        from {
+          opacity: 1;
+          transform: translate(-50%, -50%);
+          filter: hue-rotate(0);
+        }
+        to {
+          opacity: 0;
+          transform: translate(-50%, -1000%);
+          filter: hue-rotate(3000deg);
+        }
+      }
+    </style>
+  </head>
+  <body></body>
+  <script>
+    if ("mousemove") {
+      const divEl = document.querySelector("body");
+      divEl.addEventListener("pointermove", (event) => {
+        const x = event.offsetX;
+        const y = event.offsetY;
+        const spanEl = document.createElement("span");
+        spanEl.style.left = x + "px";
+        spanEl.style.top = y + "px";
+        const size = Math.random() * 250;
+        spanEl.style.height = size + "px";
+        spanEl.style.width = size + "px";
+        spanEl.style.animationName = `animate`;
+        spanEl.style.animationDuration = `7s`;
+        spanEl.style.animationTimingFunction = `linear`;
+        // cai animate trong js
+        divEl.appendChild(spanEl);
+        setTimeout(function () {
+          spanEl.remove();
+        }, 5000);
+      });
+    }
+    const bodyEl = document.querySelector("body");
+    bodyEl.addEventListener("touchmove", (event) => {
+      const x = event.touches[0].clientX;
+      const y = event.touches[0].clientY;
+      const spanEl = document.createElement("span");
+      spanEl.style.left = x + "px";
+      spanEl.style.top = y + "px";
+      const size = Math.random() * 200;
+      spanEl.style.height = size + "px";
+      spanEl.style.width = size + "px";
+      spanEl.style.animationName = `animate`;
+      spanEl.style.animationDuration = `4s`;
+      spanEl.style.animationTimingFunction = `linear`;
+      bodyEl.appendChild(spanEl);
+      setTimeout(function () {
+        spanEl.remove();
+      }, 3000);
+    });
+  </script>
+</html>
