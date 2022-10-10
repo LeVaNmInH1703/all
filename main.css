@@ -73,16 +73,22 @@ img{
 .social a:hover{
     color:var(--primary-color);
 }
-button{
+.btn-ctn{
+    display: flex;
+    justify-content: center;
+}
+.btn{
     border: 1px solid var(--primary-color);
     width: 150px;
     height: 40px;
     background: transparent;
     color: #fff;
     border-radius: 8px;
-    margin: 0 25%;
+    padding: 10px 20px;
+    text-decoration: none;
+    text-align: center;
 }
-button:hover{
+.btn:hover{
     background-color:var(--primary-color) ;
 }
 .cart__img:hover{
