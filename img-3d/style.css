@@ -1,0 +1,147 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    touch-action: none;
+}
+
+body {
+    overflow: hidden;
+    display: flex;
+    background: #111;
+    
+    perspective: 1000px;/*perspective là chiều sâu để hiển thị 3d bình thường chỉ có chiều rộng và cao  */
+    transform-style: preserve-3d;
+    /* phù hợp với nhiều web */
+    /* display: -webkit-box;
+    display: -ms-flexbox; 
+    -webkit-perspective: 1000px;
+    -webkit-transform-style: preserve-3d; 
+    */
+    
+}
+
+#drag-container, #spin-container {
+    position: relative;
+    display: flex;
+    margin: auto;
+    /*  */
+    transform-style: preserve-3d;
+    /* rotate() xoay theo trục nhìn
+      rotateX,Y() theo trục x,y
+      skew(x,y) nghiêng 
+      translate(x,y) dịch đi 1 đoạn x,y
+    */
+    transform: rotateX(-20deg);
+    /* phù hợp với nhiều web*/
+    /* 
+    display: -webkit-box;
+    display: -ms-flexbox; 
+    -webkit-transform-style: preserve-3d;
+    -webkit-transform: rotateX(-10deg);
+    */
+    
+}
+
+#drag-container img {
+    box-shadow: 0 0 8px rgb(255, 255, 255);
+    transform-style: preserve-3d;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    line-height: 200px;
+    font-size: 50px;
+    text-align: center;
+    /* 
+    -webkit-box-shadow: 0 0 8px #fff;
+    -webkit-transform-style: preserve-3d;
+    -webkit-box-reflect: below 10px linear-gradient(transparent, transparent, #0005);
+     */
+}
+
+#drag-container img:hover {
+
+  /* -webkit-box-shadow: 0 0 15px #fffd;
+  -webkit-box-reflect: below 10px linear-gradient(transparent, transparent, #0007); */
+
+  box-shadow: 0 0 15px #fffd;
+  
+}
+
+#drag-container p {
+    font-family: Serif;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%,-50%) rotateX(90deg);
+  color: #fff;
+  
+  /* -webkit-transform: translate(-50%,-50%) rotateX(90deg); */
+}
+
+#ground {
+    width: 900px;
+    height: 900px;
+    position: absolute;
+    top: 100%;
+    left: 100%;
+    /* background: -webkit-radial-gradient(center center, farthest-side , #9993, transparent); */
+    background: radial-gradient(farthest-side at 40% 50% , #9993, transparent,transparent);
+    /*radial-gradient() đổ mầu đến cạnh xa nhất từ tâm 45% 50% theo hình tròn   */
+     transform: translate(-50%,-50%) rotateX(90deg);
+    /* -webkit-transform: translate(-50%,-50%) rotateX(90deg); */
+         
+  
+}
+
+#music-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+/* 
+@-webkit-keyframes spin {
+    from {
+        -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+    }
+    to{
+        -webkit-transform: rotateY(1440deg);
+        transform: rotateY(1440deg);
+    }
+}
+
+@keyframes spin {
+    from{
+      -webkit-transform: rotateY(0deg);
+              transform: rotateY(0deg);
+    } to{
+      -webkit-transform: rotateY(1440deg);
+              transform: rotateY(1440deg);
+    }
+  } */
+
+  @-webkit-keyframes spinRevert {
+    from{
+      -webkit-transform: rotateY(1440deg);
+              transform: rotateY(1440deg);
+    } to{
+      -webkit-transform: rotateY(0deg);
+              transform: rotateY(0deg);
+    }
+  }
+
+  @keyframes spinRevert {
+    from{
+      -webkit-transform: rotateY(1440deg);
+              transform: rotateY(1440deg);
+    } to{
+      -webkit-transform: rotateY(0);
+              transform: rotateY(0);
+    }
+  }
