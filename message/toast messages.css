@@ -1,0 +1,158 @@
+body{
+    background-color: aliceblue;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+/* TOAST MESSAGES */
+.toast{
+    margin: 0 auto;
+    display: flex;
+    background-color: #fff;
+    align-items: center;
+    border-radius: 2px;
+    border-left:4px solid ;
+    box-shadow: 0px 5px 8px rgba(0,0, 0,0.08);
+    /* 0 là chiều ngang 5 là chiều dọc 8 là bo góc */
+    padding: 10px;
+    min-width: 300px;
+    max-width: 400px;
+    /* transform: translateX(200px);
+        trượt theo trục x 200px
+    */
+    /* animation: slideInLeft ease 1s,fadeout linear 1s 3s forwards; */
+    /* mờ trong 1s 3s sau mới bắt đầu mờ  forwards để dừng ở điểm cuối animation*/
+    transition: all linear 1s;
+    /* "chuyển tiếp" */
+}
+
+@keyframes slideInLeft{
+    from{
+        opacity: 0;
+        transform: translateX(calc(100% + 20px));
+    }
+    to{
+        opacity: 1;
+        transform:translateX(0) ;
+    }
+}
+
+@keyframes fadeout{
+    to{
+        opacity: 0;
+    }
+}
+
+/* #TOAST */
+#toast{
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999999;
+}
+
+
+/* ICON */
+.toast__icon{
+    font-size: 24px;
+   
+}
+/* BODY */
+.toast__body{
+    flex-grow: 1;
+    /* ưu tiên lớn lên khi thừa khoang chống */
+}
+.toast__title{
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+}
+.toast__msg{
+    font-size: 16px;
+    color: #333;
+    margin-top:14px;
+}
+/*CLOSE  */
+.toast__close{
+    font-size: 20px;
+    color: rgba(0,0, 0,0.3);
+     cursor: pointer;
+}
+.toast__close:hover{
+    opacity: 0.5;
+}
+
+.toast__title,.toast__msg{
+    margin: 0;
+}
+.toast+.toast{
+    margin: 10px auto;
+
+}
+
+.toast__icon,.toast__close{
+    padding: 0 16px;
+}
+
+/* THUỘC TÍNH */
+.toast--success{
+    border-color: #47d864 ;
+}
+.toast--success .toast__icon{
+    color: #47d864
+}
+
+.toast--info{
+    border-color:#2f86eb ;
+}
+.toast--info .toast__icon{
+    color:#2f86eb; 
+}
+.toast--warning{
+    border-color:#ffc021 ;
+}
+.toast--warning .toast__icon{
+    color: #ffc021;
+}
+.toast--error{
+    border-color:#ff623d ;
+}
+.toast--error .toast__icon{
+    color:#ff623d ;
+}
+
+/* button */
+.button__container{
+    margin: 50vh auto;
+    display: flex;  
+}
+.button{
+    color: #fff;
+    padding: 12px 16px;
+  
+    min-width: 100px;
+    border-radius: 30px;
+    text-align: center;
+}
+.button+.button{
+    margin-left: 16px;
+}
+.button__success{
+    background-color: #47d864;
+}
+.button__error{
+    background-color: #ff623d;
+}
+.button__warning{
+    background-color: #eb2f2f;
+}
+.button__info{
+    background-color: #2f86eb;
+}
+.button:hover {
+    /* phải ghi : liền vào */
+    opacity: 0.5;
+    cursor: pointer;
+}

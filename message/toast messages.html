@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Toast Messages</title>
+    <link rel="stylesheet" href="toast messages.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div>
+      <!-- Success
+        <div class="toast toast--success">
+            <div class="toast__icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <div class="toast__body">
+                <h3 class="toast__title"> Success</h3>
+                <p class="toast__msg">lê văn minh đại học giao thông vận tải</p>
+            </div>
+            <div class="toast__close">
+                <i class="fas fa-times"></i>
+            </div>
+        </div>
+        Info
+        <div class="toast toast--info">
+            <div class="toast__icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <div class="toast__body">
+                <h3 class="toast__title"> Info</h3>
+                <p class="toast__msg">lê văn minh đại học giao thông vận tải</p>
+            </div>
+            <div class="toast__close">
+                <i class="fas fa-times"></i>
+            </div>
+        </div>
+        Warning
+        <div class="toast toast--warning">
+            <div class="toast__icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <div class="toast__body">
+                <h3 class="toast__title"> Warning </h3>
+                <p class="toast__msg">lê văn minh đại học giao thông vận tải thanh lâm lục nam bắc giang</p>
+            </div>
+            <div class="toast__close">
+                <i class="fas fa-times"></i>
+            </div>
+        </div>
+        Error
+        <div class="toast toast--error">
+            <div class="toast__icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <div class="toast__body">
+                <h3 class="toast__title">Error</h3>
+                <p class="toast__msg">lê văn minh đại học giao thông vận tải</p>
+            </div>
+            <div class="toast__close">
+                <i class="fas fa-times"></i>
+            </div>
+        </div> -->
+      <div id="toast"></div>
+    </div>
+    <div class="button__container">
+      <!-- onclick là khi bấm lên sẽ gọi hàm kia -->
+      <div onclick="showSuccessToast();" class="button button__success">
+        Success
+      </div>
+      <div onclick="showErrorToast();" class="button button__error">Error</div>
+      <div onclick="showWarningToast();" class="button button__warning">
+        Warning
+      </div>
+      <div onclick="showInfoToast();" class="button button__info">Info</div>
+    </div>
+    <script>
+      function toast({
+        title = "",
+        message = "",
+        type = "info",
+        duration = 3000,
+      }) {
+        const main = document.getElementById("toast");
+        if (main) {
+          const toast = document.createElement("div");
+
+          const autoRemoveId = setTimeout(function () {
+            main.removeChild(toast);
+          }, duration + 1000);
+          // gọi hàm này sau duration + 1000 ms
+
+          toast.onclick = function (e) {
+            if (e.target.closest(".toast__close")) {
+              main.removeChild(toast);
+              clearTimeout(autoRemoveId);
+            }
+            // target "mục tiêu" trả về cái gì mình click vào
+          };
+
+          const icons = {
+            success: "fas fa-check-circle",
+            error: "fas fa-exclamation-circle",
+            info: "fas fa-info-circle",
+            warning: "fas fa-exclamation-circle",
+          };
+          const icon = icons[type];
+          const delay = (duration / 1000).toFixed(2);
+          toast.classList.add("toast", `toast--${type}`);
+          toast.style.animation = `slideInLeft ease 1s,fadeout linear 1s ${delay}s forwards`;
+          toast.innerHTML = `
+                    <div class="toast__icon">
+                        <i class="${icon}"></i>
+                    </div>
+                    <div class="toast__body">
+                        <h3 class="toast__title">${title}</h3>
+                        <p class="toast__msg">${message}</p>
+                    </div>
+                    <div class="toast__close">
+                        <i class="fas fa-times"></i>
+                    </div>
+                `;
+          main.appendChild(toast);
+        }
+      }
+
+      function showSuccessToast() {
+        toast({
+          title: "Success",
+          message: "đúng",
+          type: "success",
+          duration: 5000,
+        });
+      }
+
+      function showErrorToast() {
+        toast({
+          title: "Error",
+          message: "Sai",
+          type: "error",
+          duration: 5000,
+        });
+      }
+      function showInfoToast() {
+        toast({
+          title: "Info",
+          message: "Bình thường nhé!",
+          type: "info",
+          duration: 5000,
+        });
+      }
+      function showWarningToast() {
+        toast({
+          title: "Warning",
+          message: "Cảnh báo nhé bro!",
+          type: "warning",
+          duration: 5000,
+        });
+      }
+    </script>
+  </body>
+</html>
