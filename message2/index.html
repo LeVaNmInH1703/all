@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>msg</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div id="msg-ctn"></div>
+      <!-- <div class="msg">
+        <div class="msg__icon">
+          <i class="fas fa-info-circle"></i>
+        </div>
+        <div class="msg__title">
+          <div class="msg__title-name">Success</div>
+          <div class="msg__title-content">thành công xin chúc mừng</div>
+        </div>
+        <div class="msg__close">
+          <i class="fas fa-times"></i>
+        </div>
+      </div> -->
+      <div class="btn-ctn">
+        <button class="btn__success btn" onclick="showSuccess();">
+          Success
+        </button>
+        <button class="btn__info btn" onclick="showInfo();">Info</button>
+        <button class="btn__warning btn" onclick="showWarning();">
+          Warning
+        </button>
+        <button class="btn__error btn" onclick="showError();">Error</button>
+      </div>
+    </div>
+  </body>
+  <script src="main.js"></script>
+</html>

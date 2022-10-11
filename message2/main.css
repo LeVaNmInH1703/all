@@ -1,0 +1,123 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+body{
+  background-image: url(images/img_tree.gif);
+  background-color: #333;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  overflow: hidden;
+}
+:root{
+    --primary-color:rgb(255, 123, 0);
+    --background-color:rgb(240, 205, 165);
+    --text-color:#fff;
+}
+.container{
+
+}
+/* fixed vào thẻ bao ở ngoài để khi hiện ra nó k đè lên nhau */
+#msg-ctn{
+   position: fixed;
+  top: 20px;
+  right: 20px;
+}
+.msg{
+  background-color: #fff;
+  border-radius: 10px;
+  display: flex;
+  padding: 10px 20px;
+  align-items: center;
+  min-width: 300px;
+  position: relative;
+  transition: all 0.5s linear;
+}
+.msg+.msg{
+  margin-top: 10px;
+}
+
+@keyframes truot-ra{
+  from{
+    transform: translate(100%);
+    opacity: 0;
+  }
+  to{
+    transform: translate(0%);
+    opacity: 1;
+  }
+}
+@keyframes bien-mat {
+  to{
+    opacity: 0;
+  }
+}
+
+.msg__icon{
+  color: green;
+  margin: 0 10px 0 0;
+}
+.msg__title{
+  
+}
+.msg__title-name{
+  font-size: 20px;
+  color: green;
+}
+.msg__title-content{
+  font-size: 16px;
+}
+.msg__close{
+  position: absolute;
+  opacity: 0.5;
+  right: 10px;
+  top: 35%;
+  cursor: pointer;
+}
+
+/* btn */
+.btn-ctn{
+  margin: 50vh auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30px;
+  width: 600px;
+}
+.btn{
+  padding: 8px 22px;
+  min-width: 120px;
+  border-radius: 30px;
+  border: none;
+  font-size: 20px;
+  color: #fff;
+}
+
+.btn__success{
+  background-color: green;
+}
+.btn__success:hover{
+  box-shadow: 0 0 10px green;
+}
+.btn__info{
+  background-color: blue;
+}
+.btn__info:hover{
+  box-shadow: 0 0 10px blue;
+}
+.btn__warning{
+  background-color: orangered;
+}
+.btn__warning:hover{
+  box-shadow: 0 0 10px orangered;
+}
+.btn__error{
+  background-color: red;
+}
+.btn__error:hover{
+  box-shadow: 0 0 10px red;
+}
+
+
