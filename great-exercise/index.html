@@ -13,7 +13,6 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <script src="main.js"></script>
   </head>
   <body>
     <div class="container">
@@ -93,11 +92,17 @@
               </select>
               <input class="submit" type="submit" />
             </form>
-            
 
             <div class="title form__row3">Lọc:</div>
-            <select class="data form__control" style="width: 500px">
-              <option value="1">
+            <select
+              class="data form__control"
+              style="width: 500px"
+              name="formControl"
+              id="select_diem"
+              onchange="laygt();"
+            >
+              <!-- onchange la khi thay doi moi goi ham -->
+              <option value="1" selected>
                 Xem những học phần đã có điểm và nằm trong chương trình học
               </option>
               <option value="2">
@@ -548,4 +553,5 @@
       </div>
     </div>
   </body>
+  <script src="main.js"></script>
 </html>
