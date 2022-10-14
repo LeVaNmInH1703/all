@@ -1,0 +1,61 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    height: 100vh;
+    overflow: hidden;
+    perspective: 1000px;
+    display: flex;
+    background-color: #111;
+}
+#ctn{
+    position: relative;
+    transform-style: preserve-3d;
+    display: flex;
+    margin: auto;
+}
+#quay_ctn{
+    transform-style: preserve-3d;
+    display: flex;
+    margin: auto;
+}
+#quay_ctn img{
+    box-shadow: 0 0 15px #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#quay_ctn img:hover{
+    box-shadow: 0 0 20px #fff;
+    animation: big 0.4s linear forwards;
+}
+
+@keyframes big{
+    to{
+        width: 140%;
+        height: 140%;
+        top: -20%;
+        left: -20%;
+    }
+}
+
+#quay_ctn p{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) rotateX(90deg);
+    color: #fff;
+}
+
+@keyframes quay{
+    from{
+        transform: rotateY(0);
+    }
+    to{
+        transform: rotateY(-360deg);
+    }
+}

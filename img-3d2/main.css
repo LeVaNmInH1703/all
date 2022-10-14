@@ -1,0 +1,72 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+/* body có thuộc tính chiều sâu */
+body {
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    background: #111;
+    /* hãy thử để biết */
+    perspective: 1000px;
+    /* chiều sâu */
+}
+
+#drag-container, #spin-container {
+    position: relative;
+    display: flex;
+    margin: auto;
+    transform-style: preserve-3d;
+    background: rgba(0, green, 0, 0.5);
+}
+
+#drag-container img {
+    box-shadow: 0 0 8px rgb(255, 255, 255);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+@keyframes big{
+    to{
+        height: 150%;
+        width: 150%;
+        top:-25%;
+    }
+}
+
+#drag-container img:hover {
+  box-shadow: 0 0 30px #fff;
+  animation: big ease 0.3s forwards;
+}
+
+#drag-container p {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%,-50%) rotateX(90deg);
+  color: #fff;
+}
+
+/* cái nền */
+#ground {
+    width: 900px;
+    height: 900px;
+    position: absolute;
+    top: 100%;
+    left: 100%;
+    background: radial-gradient(farthest-side at 40% 50% , #9993, transparent,transparent);
+     transform: translate(-50%,-50%) rotateX(90deg);
+}
+
+  @keyframes spinRevert {
+    from{
+      -webkit-transform: rotateY(1440deg);
+              transform: rotateY(1440deg);
+    } to{
+      -webkit-transform: rotateY(0);
+              transform: rotateY(0);
+    }
+  }
