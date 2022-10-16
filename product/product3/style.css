@@ -1,0 +1,130 @@
+:root{
+    --zulzim: #00B4CC;
+    --verdum: #3bc43b;
+    --vermelhum: #c40000;
+    --dregadre: linear-gradient(#c40000 , black);
+    --dregadred: linear-gradient( #008C9E , #00DFFC);
+    --dregadreCinza: linear-gradient( #dedede , gray);
+    --trinta: 30px;
+}
+
+html {
+    
+}
+
+section {
+    background-image: linear-gradient(gray , white);
+}
+
+.canvas {
+    background-color: white;
+    padding-top: 25px;
+    height: 300px;
+}
+.canvas .product {
+    width: 340px;
+    position: relative;
+    margin: -220px auto 0 auto;
+}
+
+.canvas .product-fx {
+    width: 340px;
+    position: relative;
+    left: 0;
+    bottom: 3px;
+}
+
+.canvas #fx {
+    overflow: hidden;
+    width: 332px;
+    position: relative;
+    /* bottom: 41px; */
+    left: -4px;
+    height: 248px;
+    margin: -250px auto 0 auto;
+}
+
+.canvas .fx {
+    -webkit-animation-name: fx-product;
+    -webkit-animation-duration: 1s;
+    animation-name: fx-product;
+    animation-duration: 1s;
+    display: overflow;
+    height: 230px;
+}
+
+@keyframes fx-product {
+    from {height: 230px; opacity: 1}
+    to {height: 0; opacity: 0.7}
+}
+
+.canvas .circle-bg {
+    border: 17px black solid;
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    opacity: 0.1;
+    margin: 10px auto 0 auto;
+    position: relative;
+}
+
+.property {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+}
+.property select {
+    float: right;
+    width: 100%;
+    height: var(--trinta) + 3px;
+    border-radius: 7px;
+    border: 1px #00B4CC solid;
+}
+.property .btn {
+    width: var(--trinta);
+    height: var(--trinta);
+    margin: 2px;
+    border-radius: 100%;
+    overflow: hidden;
+    text-align: center;
+    padding: 0;
+    border: 2px #dedede solid;
+}
+.property .btn i {
+    font-size: 13px;
+    color: white;
+}
+.property .red {
+    background-color: red;
+    color: white;
+}
+.property .blue {
+    background-color: var(--zulzim);
+    color: white;
+}
+.property .green {
+    background-color: var(--verdum);
+    color: white;
+}
+.property .gradient {
+    background-image: var(--dregadre);
+    background-color: red;
+    color: white;
+}
+.property .black {
+    background-color: black;
+    color: white;
+}
+
+.Atts .btn-cart  {
+    float: left;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    float: right;
+    width: 100%;
+    background-image: linear-gradient( #008C9E , #00DFFC);
+    color: white;
+    border: 0;
+    border-radius: 5px;
+    height: 56px
+} 
