@@ -96,6 +96,5 @@ img{
     width: 100%;
     border-radius: unset;
     transform: translate(0,-25px);
-    transition: 0.5s;
     border: none;
 }
