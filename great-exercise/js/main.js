@@ -1,11 +1,11 @@
-var modal1 = document.getElementById('login');
-var modal2 = document.getElementById('sign-up');
+var loginPage = document.getElementById('login');
+var signUpPage = document.getElementById('sign-up');
 window.onclick = function (event) {
-    if (event.target == modal2) {
-        modal2.style.display = "none";
+    if (event.target == signUpPage) {
+        signUpPage.style.display = "none";
     }
-    if (event.target == modal1) {
-        modal1.style.display = "none";
+    if (event.target == loginPage) {
+        loginPage.style.display = "none";
     }
 }
 

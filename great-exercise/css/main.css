@@ -7,9 +7,10 @@
     --primary-color:#ffc107;
     --background-color:#fff;
     --text-color:#333;
+    --background-color2:rgb(221, 221, 221);
 }
 body{
-   
+    background-color: var(--background-color);
 }
 .container{
      background-color: var(--background-color);
@@ -46,30 +47,49 @@ body{
     border-right: 1px #999 solid;
     padding-right: 10px;
 }
+.header__info-item:nth-child(1) .header__info-link:hover,
+.header__info-item:nth-child(2) .header__info-link:hover{
+    color: var(--primary-color);
+}
 
 /* header logo */
 .header__logo{
     display: flex;
     align-items: center;
-    justify-content: space-between;
 }
+
 .header__logo-img{
-    margin-right:20% ;
+    margin-right:2% ;
+    width: 80px;
 }
-.header__logo-search{
-    flex: 1;
+.header__logo-text{
+
+}
+.header__logo-text1{
+    font-size: 24px;
+    color: rgba(0, 98, 255, 0.998);
+}
+.header__logo-text2{
+    margin-top: 5px;
+    font-size: 12px;
+    color: var(--primary-color) ;
+    letter-spacing: 4px;
+    font-weight: 600;
+}
+
+.header__search{
     display: flex;
     justify-content: right;
     align-items: center;
+    margin-bottom: 10px;
 }
-.header__logo-search-input{
+.header__search-input{
     border:1px solid rgb(192, 192, 192);
     border-radius: 3px;
-    flex: 1;
     padding: 5px;
     outline: none;
 }
-.header__logo-search-icon{
+.header__search-icon{
     color: #fff;
     border-radius: 3px;
     padding: 9px 20px;
@@ -78,7 +98,7 @@ body{
     cursor: pointer;
     font-size: 12px;
 }
-.header__logo-search-icon:hover{
+.header__search-icon:hover{
     opacity: 0.8;
 }
 
@@ -130,6 +150,62 @@ body{
 }
 
 
+/* body */
+.body{
+    background-color: var(--background-color2);
+    display: flex;
+    justify-content: space-around;
+    padding: 30px 5%;
+    width: 85%;
+    margin: auto;
+}
+.body__big-img-ctn{
+    width: 65%;
+    position: relative;
+    
+    overflow: hidden;
+}
+.body__big-img{
+    position: absolute;
+    /* transition: 0.5s; */
+    width: 100%;
+    
+}
+#big-img1{
+    animation: slideLeft  linear 15s infinite;
+    animation-delay: 10s;
+}
+#big-img2{
+    animation: slideLeft  linear 15s infinite;
+    animation-delay: 5s;
+}
+#big-img3{
+   animation: slideLeft  linear 15s infinite;
+}
+
+@keyframes slideLeft {
+    30%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+    33.33%{
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    96.66%{
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+.body__news{
+    height: 500px;
+    width: 30%;
+}
+
 /* login */
 #login{
     position: fixed;
@@ -147,7 +223,7 @@ body{
     color: var(--text-color);
     width: 400px;
     margin: 50px auto auto auto;
-    background-color: #fff;
+    background-color: var(--background-color);
     top: 20%;
     left: 35%;
     padding: 30px 50px;
@@ -182,6 +258,7 @@ body{
     transition: 0.5s;
 }
 .login__account input{
+    background-color: var(--background-color);
     padding-top:22px ;
     border: none;
     outline: none;
@@ -258,7 +335,7 @@ body{
     color: var(--text-color);
     width: 400px;
     margin: 50px auto auto auto;
-    background-color: #fff;
+    background-color: var(--background-color);
     top: 20%;
     left: 35%;
     padding: 30px 50px;
@@ -278,6 +355,7 @@ body{
     position: relative;
 }
 .sign-up__account input{
+    background-color: var(--background-color);
     margin-bottom: 30px;
     border: none;
     border-bottom: 1px solid #999;
@@ -317,13 +395,13 @@ body{
 [class*="btn"]{
     min-width: 80px;
     cursor: pointer;
-    background-color: #fff;
+    background-color: var(--background-color);
     border-radius: 20px;
-    border:1px solid #ffc107;
+    border:2px solid var(--primary-color);
     padding: 9px 20px
 }
 [class*="btn"]:hover{
-    background-color: #ffc107;
+    background-color: var(--primary-color);
     color: #fff;
 }
 .btn-sign-in{
