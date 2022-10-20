@@ -165,6 +165,9 @@ body{
     font-size: 3.6rem;
 }
 
+.layout{
+    
+}
 /* máy tính bảng */
 @media (max-width:1023px) and (min-width:740px){
     
