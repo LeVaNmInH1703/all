@@ -89,6 +89,8 @@
 
       <div id="login">
         <div class="login-ctn">
+          <i class="fa-regular close fa-x" onclick="Close('login');"></i>
+
           <img src="images/user.png" alt="" class="login__img" />
           <div class="login__account">
             <label for="username">User name</label>
@@ -103,59 +105,43 @@
             <label for="remember">remember me</label>
           </div>
           <button class="login__btn" type="submit">Login</button>
+          <button class="login__forgot-password">Forgot password?</button>
           <div class="login__sign-up">
             You don't have account
             <button
               class="login__sign-up-link"
               onclick="document.getElementById('sign-up').style.display='block';
-            document.getElementById('login').style.display='none';"
+            Close('login')"
             >
               Sign up
             </button>
-          </div>
-
-          <div class="login__footer">
-            <button
-              class="login__footer-btn"
-              onclick="document.getElementById('login').style.display='none'"
-            >
-              Cancel
-            </button>
-            <button class="login__footer-link">Forgot passwword?</button>
           </div>
         </div>
       </div>
 
       <div id="sign-up">
         <div class="sign-up-ctn">
+          <i class="fa-regular close fa-x" onclick="Close('sign-up');"></i>
           <img src="images/user.png" alt="" class="sign-up__img" />
           <div class="sign-up__account">
             <label for="">User name</label>
             <input type="text" /><br />
             <label for="">Pass word</label>
             <input type="password" /><br />
-            <label for="">Enter the password again</label>
+            <label for="">Confirm password</label>
             <input type="password" />
           </div>
           <button class="sign-up__btn">Sign up</button>
 
-          <div class="sign-up__footer">
+          <div class="sign-up__login">
+            You have account
             <button
-              class="sign-up__footer-btn"
-              onclick="document.getElementById('sign-up').style.display='none'"
+              class="sign-up__login-link"
+              onclick="Close('sign-up');
+              document.getElementById('login').style.display='block';"
             >
-              Cancel
+              Login
             </button>
-            <div class="sign-up__login">
-              You have account
-              <button
-                class="sign-up__login-link"
-                onclick="document.getElementById('sign-up').style.display='none';
-                document.getElementById('login').style.display='block';"
-              >
-                Login
-              </button>
-            </div>
           </div>
         </div>
       </div>
@@ -188,5 +174,6 @@
       </div>
     </div>
   </body>
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
   <script src="js/main.js"></script>
 </html>

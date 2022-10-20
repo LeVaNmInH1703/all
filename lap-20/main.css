@@ -1,0 +1,181 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    width: 100vw;
+    font-size: 62.5%;
+}
+
+body{
+    width: 90%;
+    margin: auto;
+}
+.nav{
+    position: relative;
+    padding-left:10px;
+    width: 100%;
+    height: 45px;
+    border-bottom:1px solid #999;
+    background:linear-gradient(rgb(221, 221, 221),#fff) ;
+}
+.nav__list{
+    list-style: none;
+    display: flex;
+}
+.nav__item{
+
+}
+.nav__link{
+    font-size: 1.6rem;
+    display: block;
+    padding: 15px 10px;
+}
+
+
+.main-title{
+   padding: 35px 10px;
+   font-size: 3rem;
+}
+
+.body{
+    display: flex;
+}
+
+.bars{
+    padding: 0 10px;
+    width: 20%;
+}
+.bar{
+    border: 1px solid #999;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.bars-title{
+    font-size: 1.6rem;
+    padding: 0 10px;
+    background: rgb(235,235,235)
+}
+.bars__list{
+    width: 100%;
+    padding: 0px 10px;
+    list-style: none;
+    list-style: none;
+}
+.bars__item{
+    padding: 5px 0;
+    font-size: 1.4rem;
+}
+.bars__item-link{
+    text-decoration: none;
+}
+
+.form{
+    padding: 10px;
+}
+.form__title{
+    font-size: 1.6rem;
+    
+}
+
+
+.form__table1{
+    border: 1px solid #999;
+    overflow: hidden;
+}
+.table1__title{
+    padding-left: 30px;
+    font-size: 1.6rem;
+    width: 100%;
+    background-color: #fff;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+}
+.table1__table{
+    width: 100%;
+    background-color: rgb(244, 244, 244);
+}
+.table1__table tr{
+    width: 100%;
+    border: 1px solid rgb(214, 214, 214);
+    display: flex;
+    padding: 5px 0;
+}
+.table1__table th{
+    text-align: right;
+    padding-right: 10px;
+    width: 15%;
+    font-size: 1.4rem;
+    font-weight: 300;
+}
+.table1__table td label{
+    font-size: 1.2rem;
+    margin-right: 10px;
+}
+.table1__table td input{
+    font-size: 1.2rem;
+}
+#save{
+    padding: 2px 6px;
+}
+
+.form__table2{
+    margin-top: 30px;
+    width: 100%;
+
+}
+.table2__table{
+    border-collapse: collapse;
+    width: 60%;
+   
+}
+.table2__table th{
+    padding: 3px 0 3px 10px;
+    text-align: left;
+    font-size: 1.5rem;
+    background-color: rgb(224, 224, 224);
+    border: 1px solid #999;
+}
+.table2__table td{
+    padding: 3px 10px;
+    font-size: 1.4rem;
+    background-color: rgb(244, 244, 244);
+    border: 1px solid #999;
+}
+
+
+.footer{
+    margin: 30px;
+    font-size: 1.6rem;
+    width: 100%;
+    text-align: center;
+}
+.footer h4{
+    font-weight: 300;
+}
+
+.nav__icon{
+    display: none;
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    font-size: 3.6rem;
+}
+
+/* máy tính bảng */
+@media (max-width:1023px) and (min-width:740px){
+    
+}
+
+/* đt */
+@media (max-width:739px){
+    .nav__list{
+        display: none;
+    }
+    .nav__icon{
+        display: block;
+    }
+}
