@@ -1,6 +1,7 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 html{
@@ -69,6 +70,7 @@ body{
 }
 .bars__item-link{
     text-decoration: none;
+    color: #000;
 }
 
 .form{
@@ -160,17 +162,69 @@ body{
 .nav__icon{
     display: none;
     position: absolute;
-    top: 3px;
-    right: 3px;
+    top: 1px;
+    right: 5px;
     font-size: 3.6rem;
+    z-index: 999;
+}
+.nav2{
+    /* display: none;  */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    background:linear-gradient(rgb(172, 172, 172),rgb(224, 224, 224)) ;
+    transform: translateY(-100%);
+    transition: 0.5s;
+}
+.nav2__list{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+.nav2__item{
+    
+}
+.nav2__link{
+    border: 1px solid #999;
+    display: block;
+    font-size: 1.4rem;
+    padding: 10px 0 10px 30px;
+    color: #000;
+}
+.nav2__link:hover{
+    background-color: #fff;
 }
 
 .layout{
-    
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    display: none;
+}
+#navbars{
+    display: none;
+}
+#navbars:checked~.layout{
+    display: block;
+}
+#navbars:checked~.nav2{
+    transform: translateY(0);
 }
 /* máy tính bảng */
 @media (max-width:1023px) and (min-width:740px){
-    
+    .bars{
+        width: 35%;
+        padding: 0;
+        padding-left:10px ;
+    }
+    .table2__table{
+        width: 100%;
+    }
 }
 
 /* đt */
@@ -180,5 +234,24 @@ body{
     }
     .nav__icon{
         display: block;
+    }
+    .bars{
+       display: flex;
+       width: 100%;
+    }
+    .navbars{
+
+    }
+    .body{
+        flex-direction: column;
+    }
+    .form{
+        width: 100%;
+    }
+    .table2__table{
+        width: 100%;
+    }
+    .table1__table th {
+        width: 25%;
     }
 }
