@@ -1,0 +1,96 @@
+
+div#boxImportSampleData div.import-setting-box-container {
+    position: relative;
+    padding: 5px 10px 10px;
+    text-align: center;
+}
+
+div#boxImportSampleData div.import-setting-box-container button#btnImportSampleData {
+    display: inline-block;
+    background-color: #909090;
+    color: #ffffff;
+    font-size: 14px;
+    text-align: center;
+    padding: 6px 8px;
+    width: 200px;
+    cursor: pointer;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+div#boxImportSampleData div.import-setting-box-container button#btnImportSampleData:hover, 
+div#boxImportSampleData div.import-setting-box-container button#btnImportSampleData:focus {
+    background-color: #666666;
+}
+
+div#boxImportSampleData div.import-setting-box-container button#btnImportSampleData i {
+    display: inline-block;
+    margin-right: 5px;
+    font-size: 15px;
+}
+
+div#boxImportSampleData div.import-setting-box-container button#btnImportSampleData span.down-arrow {
+    display: inline-block;
+    margin-left: 15px;
+    vertical-align: 1px;
+
+    width: 0px;
+    height: 0px;
+    border-top: 6.5px solid #ffffff;
+    border-right: 5.5px solid transparent;
+    border-left: 5.5px solid transparent;
+}
+
+div#boxImportSampleData div.import-setting-box-container div.import-setting-box {
+    width: 200px;
+    max-height: 0px;
+    overflow: hidden;
+    border: 1px solid #a0a0a0;
+    border-radius: 3px;
+    background-color: #ffffff;
+    box-shadow: 0 0 5px #aaaaaa;
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: -1px auto;
+    z-index: 19;
+}
+
+div#boxImportSampleData div.import-setting-box-container div.visible-import-setting-box {
+    max-height: 600px;
+    overflow: hidden;
+    transition: max-height 1.5s linear;
+}
+
+div#boxImportSampleData div.import-setting-box-container div.hidden-import-setting-box-1 {
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 0.5s linear;
+}
+
+div#boxImportSampleData div.import-setting-box-container div.hidden-import-setting-box-2 {
+    border: 0px;
+}
+
+div#boxImportSampleData div.import-setting-box-container div.import-setting-box ul {
+    width: 100%;
+}
+
+div#boxImportSampleData div.import-setting-box-container div.import-setting-box ul li {
+    list-style-type: none;
+    padding: 6px 8px;
+    border-bottom: 1px solid #a0a0a0;
+    background-color: #ffffff;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+div#boxImportSampleData div.import-setting-box-container div.import-setting-box ul li:last-child {
+    border-bottom: none;
+}
+
+div#boxImportSampleData div.import-setting-box-container div.import-setting-box ul li:hover {
+    background-color: #f0f0f0;
+}

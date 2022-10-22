@@ -1,0 +1,33 @@
+
+div.list-student button#btnScrollTop {
+    outline: none;
+    background-color: #eeeeee;
+    color: #909090;
+    border: 1px solid #cccccc;
+    border-right: none;
+    cursor: pointer;
+    box-shadow: 0 0 5px #aaaaaa;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: background-color 0.3s, 
+                color 0.3s, 
+                border 0.3s, 
+                opacity 0.8s, 
+                visibility 1.5s ease-in-out;
+
+    position: fixed;
+    right: 0px;
+    bottom: 43px;
+    z-index: 99;
+
+    padding: 5px 10px;
+    font-size: 24px;
+    border-radius: 8px 0px 0px 8px;
+}
+
+div.list-student button#btnScrollTop:hover {
+    background-color: #dddddd;
+    color: #666666;
+    border-color: #aaaaaa;
+}

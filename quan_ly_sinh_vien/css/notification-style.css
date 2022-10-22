@@ -1,0 +1,49 @@
+
+div.notification {
+    width: 220px;
+    height: 55px;
+    color: #ffffff;
+    font-size: 13px;
+    line-height: 1.5;
+    padding: 8px 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 3px #353535;
+
+    transform: translateX(280px) scaleY(1);
+    transform-origin: bottom;
+    transition: transform 0.4s linear;
+
+    position: fixed;
+    z-index: 999;
+    right: 30px;
+}
+
+div.add-notification, 
+div.update-notification, 
+div.delete-notification, 
+div.alert-notification {
+    transform: translateX(0px) scaleY(1);
+    bottom: 25px;
+}
+
+div.add-notification {
+    background-color: #104463;
+}
+
+div.update-notification {
+    background-color: #17618e;
+}
+
+div.delete-notification {
+    background-color: #2185c1;
+}
+
+div.alert-notification {
+    width: 265px;
+    height: auto;
+    background-color: #e08119;
+}
+
+div.collapse-notification {
+    transform: translateX(0px) scaleY(0);
+}

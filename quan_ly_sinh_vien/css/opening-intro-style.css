@@ -1,0 +1,94 @@
+
+div#divOpeningIntro {
+    position: fixed;
+    z-index: 9999;
+    top: 0px;
+    left: 0px;
+
+    width: 100%;
+    height: 100%;
+    background-color: rgba(38, 50, 56, 1);
+}
+
+div#divOpeningIntro.visible-overlay {
+    height: 100%;
+}
+
+div#divOpeningIntro.hidden-overlay {
+    height: 0px;
+    transition: height 3s ease;
+}
+
+div#divOpeningIntro div.header-area {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+}
+
+div#divOpeningIntro.visible-overlay div.header-area {
+    top: 25px;
+}
+
+div#divOpeningIntro.hidden-overlay div.header-area {
+    top: -120px;
+    transition: top 1.8s ease;
+}
+
+div#divOpeningIntro div.header-area img {
+    width: 100px;
+}
+
+div#divOpeningIntro div.main-area {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 36%;
+    width: 96%;
+    text-align: center;
+}
+
+div#divOpeningIntro.visible-overlay div.main-area {
+    top: 36%;
+}
+
+div#divOpeningIntro.hidden-overlay div.main-area {
+    top: -120px;
+    transition: top 4s ease;
+}
+
+div#divOpeningIntro div.visible-main-area {
+    left: 50%;
+    transition: left 3s ease;
+}
+
+div#divOpeningIntro div.hidden-main-area {
+    left: -50%;
+}
+
+div#divOpeningIntro div.main-area h2 {
+    font-size: 32px;
+    color: #ffcb6b;
+    font-family: 'Open Sans', sans-serif;
+    margin-bottom: 30px;
+}
+
+div#divOpeningIntro div.main-area h3 {
+    font-size: 24px;
+    color: #0066ff;
+    font-family: 'Open Sans', sans-serif;
+    margin-bottom: 50px;
+}
+
+div#divOpeningIntro div.main-area div.line {
+    font-size: 15px;
+    color: #b0bec5;
+    margin-bottom: 25px;
+}
+
+div#divOpeningIntro div.main-area div.line:last-child {
+    margin-bottom: 0px;
+}
+
+div#divOpeningIntro div.main-area div.line span.highlight {
+    color: #ffcb6b;
+}

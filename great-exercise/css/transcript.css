@@ -53,7 +53,7 @@ html{
     color: blue;
 }
 .header__user-role{
-    margin: 0 10px;
+    margin: 0 1rem;
 }
 .header__user-ms{
     text-decoration: none;
@@ -283,7 +283,7 @@ html{
 /* footer */
 .footer{
     margin-top: 10rem;
-    min-height: 65px;
+    min-height: 6.5rem;
     background-color: #56a4fe;
     position: relative;
     padding: 10px 0 0 8px;
@@ -376,13 +376,13 @@ html{
         flex-direction: column;
     }
     html{
-        font-size: .9vw;
+        font-size: 1.1vw;
     }
     .header__user{
         width: 40%;
     }
     .header__user-ctn{
-        margin: 5px 10px;
+        margin: .5rem 1rem;
     }
     .form .data{
         width: 100%;

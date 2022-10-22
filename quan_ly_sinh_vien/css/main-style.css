@@ -1,0 +1,315 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    background-color: #ffffff;
+}
+
+a {
+    text-decoration: none;
+    color: #000000;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+h3 {
+    margin-bottom: 20px;
+}
+
+button::-moz-focus-inner {
+    border: 0;
+}
+
+input[type="text"]::-ms-clear {
+    display: none;
+}
+
+div.container {
+    width: 1200px;
+    margin: auto;
+}
+
+div.form-student {
+    width: 400px;
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+    margin: 20px;
+    padding: 20px;
+    float: left;
+    position: relative;
+}
+
+div.form-student label {
+    width: 130px;
+    float: left;
+    padding-top: 5px;
+}
+
+div.form-student label#lblGender {
+    margin-top: -6px;
+}
+
+div.form-student label:last-of-type {
+    clear: left;
+    padding-top: 25px;
+}
+
+div.form-student input[type="text"] {
+    width: 220px;
+    padding: 5px 8px;
+    margin-bottom: 15px;
+    border: 1px solid #aaaaaa;
+    border-radius: 5px;
+    transition: box-shadow 0.4s ease-in-out;
+}
+
+div.form-student input[type="text"]:focus {
+    box-shadow: 0 0 5px #aaaaaa;
+}
+
+div.form-student input[type="radio"] {
+    vertical-align: -1px;
+    margin-right: 3px;
+    cursor: pointer;
+}
+
+div.form-student input[type="radio"]:focus {
+    outline: 1px dotted #000000;
+}
+
+div.form-student input[type="radio"]:last-of-type {
+    margin-left: 20px;
+}
+
+div.form-student div#divErrorInfo {
+    display: none;
+
+    -webkit-animation: slide-down 0.3s ease-out;
+    -moz-animation: slide-down 0.3s ease-out;
+    -webkit-animation: slide-down 2s ease-in;
+    -moz-animation: slide-down 2s ease-in;
+}
+
+@-webkit-keyframes slide-down {
+    0%  { opacity: 0; }
+    20% { opacity: 1; }
+}
+
+div.form-student div#divErrorInfo ul {
+    list-style-type: none;
+}
+
+div.form-student div#divErrorInfo ul li {
+    color: #ff0000;
+    font-size: 13.5px;
+    margin-top: 10px;
+}
+
+div.form-student div#divErrorInfo ul li:first-child {
+    margin-top: 20px;
+}
+
+div.form-student div#divErrorInfo ul li i {
+    margin-right: 3px;
+    vertical-align: 1px;
+}
+
+div.form-student button#btnSaveStudentInfo {
+    background-color: #909090;
+    color: #ffffff;
+    font-size: 15px;
+    text-align: center;
+    padding: 6px 20px;
+    width: 113px;
+    cursor: pointer;
+    border: 1px solid #cccccc;
+    margin-top: 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+div.form-student button#btnSaveStudentInfo:hover, 
+div.form-student button#btnSaveStudentInfo:focus {
+    background-color: #666666;
+}
+
+div.form-student div#divResetStudentInfo {
+    display: inline-block;
+    margin-left: calc(100% - 275px);
+    font-size: 24px;
+    color: #909090;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+}
+
+div.form-student div#divResetStudentInfo:hover, 
+div.form-student div#divResetStudentInfo:focus {
+    color: #666666;
+}
+
+div.list-student {
+    width: 735px;
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+    margin: 20px 5px;
+    padding: 20px 15px;
+    float: left;
+}
+
+div.list-student table {
+    width: 700px;
+    border: 1px solid #cccccc;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+div.list-student table tr#first-row {
+    background-color: #909090;
+    color: #ffffff;
+    font-size: 13.5px;
+    height: 40px;
+    text-align: center;
+    cursor: initial;
+}
+
+div.list-student table tr#first-row td {
+    border-right: 1px solid #cccccc;
+}
+
+div.list-student table tr#first-row td:last-child {
+    border-right: none;
+}
+
+div.list-student table tr {
+    font-size: 13px;
+    height: 30px;
+    border-bottom: 1px solid #cccccc;
+    cursor: pointer;
+    transition: background-color 0.25s ease-in-out;
+}
+
+div.list-student table tr.even-order {
+    background-color: #eeeeee;
+}
+
+div.list-student table tr.no-data-found {
+    height: 36px;
+    background-color: #eeeeee;
+    color: #0000ff;
+    font-size: 13.5px;
+    cursor: initial;
+}
+
+div.list-student table tr.error-info {
+    height: 100%;
+    background-color: #eeeeee;
+    color: #ff0000;
+    font-size: 13.5px;
+    cursor: initial;
+}
+
+div.list-student table tr:hover {
+    background-color: #dddddd;
+    color: #0000ff;
+}
+
+div.list-student table tr.focused-row {
+    background-color: #bbbbbb;
+    color: #0000ff;
+    transition: background-color 0.35s ease-in-out;
+}
+
+div.list-student table tr.focused-row a {
+    color: #0000ff;
+}
+
+div.list-student table tr:last-child {
+    border-bottom: none;
+}
+
+div.list-student table tr.no-data-found:hover {
+    background-color: #eeeeee;
+}
+
+div.list-student table tr.error-info:hover {
+    background-color: #eeeeee;
+    color: #ff0000;
+}
+
+div.list-student table tr:hover a {
+    color: #0000ff;
+}
+
+div.list-student table tr td {
+    border-right: 1px solid #cccccc;
+    line-height: 20px;
+}
+
+div.list-student table tr td div {
+    max-height: 100px;
+    padding: 5px 4px;
+    overflow: hidden;
+    transition: max-height 0.4s, padding 0.5s linear;
+}
+
+div.list-student table tr.hidden-row, 
+div.list-student table tr.deleted-row {
+    height: 0px;
+    border-bottom: none;
+}
+
+div.list-student table tr.hidden-row td div, 
+div.list-student table tr.deleted-row td div {
+    max-height: 0px;
+    padding: 0px 4px;
+    overflow: hidden;
+}
+
+div.list-student table tr.added-row {
+    border-bottom: 1px solid #cccccc;
+    padding: 0px 4px;
+}
+
+div.list-student table tr.added-row td div {
+    max-height: 100px;
+    padding: 5px 4px;
+    overflow: hidden;
+    transition: max-height 1.5s, padding 0.5s linear;
+}
+
+div.list-student table tr td#col-header-order { width: 40px; }
+
+div.list-student table tr td#col-header-email { width: 155px; }
+
+div.list-student table tr td#col-header-hometown { width: 87px; }
+
+div.list-student table tr td#col-header-action { width: 118px; }
+
+div.list-student table tr td.col-email {
+    word-break: break-all;
+}
+
+div.list-student table tr td:last-child {
+    border-right: none;
+    cursor: initial;
+}
+
+div.list-student table tr.error-info td {
+    line-height: 1.6;
+    padding: 12px 0px;
+}

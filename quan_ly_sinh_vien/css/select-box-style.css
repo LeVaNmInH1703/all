@@ -1,0 +1,92 @@
+
+/* Reset Default Style of HTML Select Tag */
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+
+    outline: none !important;
+    border: none;
+    background-color: transparent;
+}
+
+/* Remove Default Down Arrow */
+select::-ms-expand {
+    display: none;
+}
+
+/* Customize Style of HTML Select Tag */
+div#boxFilterSearch div.setting-filter-search div.setting-gender {
+    position: relative;
+    display: flex;
+    width: 170px;
+    height: 32px;
+    line-height: 1.2;
+    background-color: #ffffff;
+    border-radius: 3px;
+    margin: auto;
+}
+
+@supports (-moz-appearance: none) {
+    div#boxFilterSearch div.setting-filter-search div.setting-gender {
+        height: 33px;
+    }
+}
+
+@supports (-ms-ime-align: auto) {
+    div#boxFilterSearch div.setting-filter-search div.setting-gender {
+        height: 33px;
+    }
+}
+
+div.setting-gender select#selGender {
+    flex: 1;
+    border: 1px solid #aaaaaa;
+    padding: 7px 15px;
+    color: #000000;
+    background-color: transparent;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.35s ease-in-out;
+}
+
+div.setting-gender:hover select#selGender {
+    border-color: #909090;
+}
+
+div.setting-gender select#selGender:focus {
+    box-shadow: 1px 0 6px #aaaaaa;
+    border-color: #80bdff;
+}
+
+div.setting-gender select#selGender:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 #000000;
+}
+
+/* Customize Down Arrow */
+div.setting-gender div.down-arrow {
+    position: absolute;
+    top: 1px;
+    right: 1px;
+
+    color: #909090;
+    padding: 7px 9px;
+    background-color: #ffffff;
+    border-left: 1px solid #aaaaaa;
+    border-radius: 0 3px 3px 0;
+    cursor: pointer;
+    pointer-events: none;
+    transition: all 0.35s ease-in-out;
+}
+
+div.setting-gender:hover div.down-arrow {
+    color: #666666;
+    border-color: #909090;
+}
+
+div.setting-gender select#selGender:focus + div.down-arrow {
+    border-color: #80bdff;
+    color: #000000;
+}

@@ -1,0 +1,221 @@
+
+div.hidden-container {
+    height: 100vh;
+    overflow: hidden;
+}
+
+div#winHelpFilterSearch.popup-window, 
+div#winListShortcutKeys.popup-window, 
+div#winIntroduceProduct.popup-window {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid #dfa04a;
+    background-color: #212121;
+}
+
+div#winHelpFilterSearch.popup-window, 
+div#winListShortcutKeys.popup-window {
+    width: 485px;
+}
+
+div#winIntroduceProduct.popup-window {
+    width: 470px;
+}
+
+div#winHelpFilterSearch.hidden-popup-window, 
+div#winListShortcutKeys.hidden-popup-window, 
+div#winIntroduceProduct.hidden-popup-window {
+    opacity: 0;
+    visibility: hidden;
+    transition: top 0.5s, opacity 0.7s, visibility 0.7s linear;
+}
+
+div#winHelpFilterSearch.hidden-popup-window, 
+div#winListShortcutKeys.hidden-popup-window {
+    top: -20%;
+}
+
+div#winIntroduceProduct.hidden-popup-window {
+    top: -10%;
+}
+
+div#winHelpFilterSearch.visible-popup-window, 
+div#winListShortcutKeys.visible-popup-window, 
+div#winIntroduceProduct.visible-popup-window {
+    opacity: 1;
+    visibility: visible;
+    transition: top 0.8s, opacity 0.1s, visibility 0.1s linear;
+}
+
+div#winHelpFilterSearch.visible-popup-window, 
+div#winListShortcutKeys.visible-popup-window {
+    top: 35%;
+}
+
+div#winIntroduceProduct.visible-popup-window {
+    top: 28%;
+}
+
+div.popup-window div.header-area {
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #000000;
+    background-color: #ffffff;
+}
+
+div.popup-window div.header-area div.left-item {
+    font-size: 13px;
+}
+
+div.popup-window div.header-area div.left-item img {
+    display: inline-block;
+    width: 24px;
+    height: auto;
+    margin-left: 5px;
+    margin-top: 3px;
+}
+
+div.popup-window div.header-area div.left-item label {
+    display: inline-block;
+    margin-left: 3px;
+    vertical-align: 6px;
+}
+
+div.popup-window div.header-area div.right-item {
+    width:32px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+    background-color: transparent;
+    transition: color 0.25s, background-color 0.3s linear;
+}
+
+div.popup-window div.header-area div.right-item:hover, 
+div.popup-window div.header-area div.right-item:focus {
+    color: #ffffff;
+    background-color: #e81123;
+}
+
+div.popup-window div.main-area h2 {
+    font-size: 25px;
+    color: #ffffff;
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    margin-top: 15px;
+}
+
+div.popup-window div.main-area h3 {
+    font-size: 20px;
+    color: #ffffff;
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    float: none;
+    margin: 10px auto 30px;
+}
+
+div#winHelpFilterSearch.popup-window div.main-area h3, 
+div#winListShortcutKeys.popup-window div.main-area h3 {
+    font-family: 'Arial', sans-serif;
+    margin: 20px auto;
+}
+
+div#winListShortcutKeys.popup-window div.main-area h3, 
+div#winIntroduceProduct.popup-window div.main-area h3 {
+    font-size: 18px;
+}
+
+div.popup-window div.main-area div.example {
+    font-size: 13px;
+    color: #b0bec5;
+    margin: 0px 15px 20px 25px;
+}
+
+div.popup-window div.main-area div.example div.heading {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+div.popup-window div.main-area div.example div.heading i {
+    font-size: 11px;
+    color: #0066ff;
+    width: 20px;
+    margin-top: 2px;
+}
+
+div.popup-window div.main-area div.example div.heading div.text {
+    width: calc(100% - 20px);
+}
+
+div.popup-window div.main-area div.example div.heading div.text i {
+    font-size: 14px;
+    color: #ffcb6b;
+    margin-top: 0px;
+}
+
+div.popup-window div.main-area div.example div.content {
+    margin-top: 6px;
+    margin-left: 22px;
+
+    display: flex;
+    flex-wrap: wrap;
+}
+
+div.popup-window div.main-area div.example div.content i {
+    font-size: 13px;
+    color: #ffcb6b;
+    width: 24px;
+}
+
+div.popup-window div.main-area div.example div.content div.text {
+    width: calc(100% - 24px);
+    line-height: 1.6;
+    margin-top: -2px;
+}
+
+div.popup-window div.main-area div.example div.heading div.text span.highlight, 
+div.popup-window div.main-area div.example div.content div.text span.highlight {
+    color: #ffcb6b;
+}
+
+div.popup-window div.main-area div.example div.heading div.text span#keyArrowUpDown.highlight i {
+    font-size: 15px;
+    margin-left: 3px;
+    vertical-align: -1px;
+    width: 15px;
+}
+
+div.popup-window div.main-area div.line {
+    font-size: 13px;
+    color: #b0bec5;
+    margin: 0px 15px 10px 30px;
+
+    display: flex;
+    flex-wrap: wrap;
+}
+
+div.popup-window div.main-area div.line:last-child {
+    margin-bottom: 25px;
+}
+
+div.popup-window div.main-area div.line div.heading {
+    width: 112px;
+}
+
+div.popup-window div.main-area div.line div.heading span.text {
+    display: inline-block;
+    width: 102px;
+    color: #0066ff;
+}
+
+div.popup-window div.main-area div.line div.content {
+    width: calc(100% - 112px);
+}
+
+div.popup-window div.main-area div.line div.content span.highlight {
+    color: #ffcb6b;
+}

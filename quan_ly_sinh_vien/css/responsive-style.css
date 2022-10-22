@@ -1,0 +1,974 @@
+
+@media only screen and (max-width: 1199px) {
+    div.container {
+        width: 96%;
+    }
+
+    div.form-student {
+        margin-left: 0px;
+    }
+
+    div.form-student button#btnMinimizeForm {
+        display: none;
+        opacity: 0;
+    }
+
+    div.list-student {
+        width: calc(100% - 430px);
+    }
+
+    div.list-student table {
+        width: 100%;
+    }
+
+    div#winAlertBeforeChange, 
+    div#winConfirmBeforeChange {
+        left: calc(50% + 16px);
+    }
+
+    div#winProcessBeforeChange {
+        left: calc(48% + 9px);
+    }
+}
+
+@media only screen and (max-width: 1150px) {
+    div.form-student {
+        float: none;
+        width: 450px;
+        margin: 20px auto;
+    }
+
+    div.form-student input[type="text"] {
+        width: 270px;
+    }
+
+    div.form-student button#btnMinimizeForm {
+        display: inline-block;
+        opacity: 1;
+    }
+
+    div.list-student {
+        float: none;
+        width: 96%;
+        margin: 20px auto;
+        padding: 20px;
+    }
+
+    div.list-student button#btnScrollTop {
+        padding: 3px 6px;
+    }
+
+    div#winAlertBeforeChange {
+        top: calc(46% + 11px);
+        left: 50%;
+    }
+
+    div#winConfirmBeforeChange {
+        top: calc(45% + 11px);
+        left: 50%;
+    }
+
+    div#winConfirmBeforeChange.import-students {
+        top: calc(46% + 11px);
+    }
+
+    div#winProcessBeforeChange {
+        top: calc(43% + 9px);
+        left: 50%;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    div.notification {
+        right: 40px;
+    }
+
+    div.add-notification, 
+    div.update-notification, 
+    div.delete-notification, 
+    div.alert-notification {
+        bottom: 22px;
+    }
+
+    div#winAlertBeforeChange {
+        top: calc(32% + 9px);
+    }
+
+    div#winConfirmBeforeChange {
+        top: calc(31% + 12px);
+    }
+
+    div#winConfirmBeforeChange.import-students {
+        top: calc(32% + 9px);
+    }
+
+    div#winProcessBeforeChange {
+        top: calc(30% + 4px);
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    div.form-student {
+        width: 400px;
+    }
+
+    div.form-student input[type="text"] {
+        width: 220px;
+    }
+
+    div.form-student div#divResetStudentInfo {
+        margin-left: calc(100% - 275px);
+    }
+
+    div.list-student {
+        width: 100%;
+        padding: 20px 10px;
+    }
+
+    div.list-student button#btnScrollTop {
+        padding: 3px 4px;
+        font-size: 22px;
+        border-radius: 5px 0px 0px 5px;
+    }
+
+    div button#btnMaximizeForm {
+        top: 0px;
+        left: 2.5%;
+    }
+
+    div.notification {
+        right: 16px;
+    }
+
+    div#winAlertBeforeChange {
+        top: calc(42% + 15px);
+    }
+
+    div#winConfirmBeforeChange {
+        top: calc(41% + 15px);
+    }
+
+    div#winConfirmBeforeChange.import-students {
+        top: calc(42% + 15px);
+    }
+
+    div#winProcessBeforeChange {
+        top: calc(39% + 15px);
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    div.list-student {
+        width: 96%;
+        padding: 20px;
+    }
+
+    div.advance-setting-container {
+        float: none;
+    }
+
+    div#divAdvanceSettingIcon {
+        float: right;
+        margin-right: 5px;
+    }
+
+    div.setting-box-container {
+        width: 100%;
+        position: static;
+        overflow: hidden;
+        margin-bottom: 20px;
+    }
+
+    div.hidden-setting-box-container-2 {
+        margin-bottom: 0px;
+    }
+
+    div.setting-box-container div.setting-box-header, 
+    div.setting-box-container div.setting-box-footer {
+        cursor: default;
+        width: 0px;
+        height: 0px;
+    }
+
+    div.setting-box-container div.setting-box-footer {
+        margin-top: 0px;
+    }
+
+    div.list-student table {
+        border: none;
+    }
+
+    div.list-student table tr#first-row {
+        display: none;
+    }
+
+    div.list-student table tr {
+        font-size: 14px;
+        height: 100%;
+        border: 1px solid #cccccc;
+        border-bottom-width: 2px;
+        transition: background-color 0.35s ease-in-out;
+
+        max-height: 800px;
+        overflow: hidden;
+
+        display: block;
+        background-color: #eeeeee;
+        margin-bottom: 20px;
+        padding: 4px 8px;
+        box-shadow: 0 0 5px #aaaaaa;
+    }
+
+    div.list-student table tr.no-data-found:hover {
+        color: #0000ff;
+    }
+
+    div.list-student table tr.error-info:hover {
+        color: #ff0000;
+    }
+
+    div.list-student table tr:hover {
+        background-color: #dddddd;
+        color: #000000;
+    }
+
+    div.list-student table tr.focused-row {
+        background-color: #bbbbbb;
+        color: #000000;
+    }
+
+    div.list-student table tr:last-child {
+        border-bottom: 2px solid #cccccc;
+        margin-bottom: 0px;
+    }
+
+    div.list-student table tr a {
+        color: #0000ff;
+    }
+
+    div.list-student table tr td {
+        border-right: none;
+        line-height: 18px;
+        border-bottom: 1px solid #cccccc;
+        display: block;
+        text-align: right;
+        width: 100%;
+        padding: 6px 6px 1px;
+    }
+
+    div.list-student table tr.no-data-found td, 
+    div.list-student table tr.error-info td {
+        text-align: center;
+    }
+
+    div.list-student table tr.error-info td {
+        line-height: 1.5;
+        padding: 8px 0px;
+    }
+
+    div.list-student table tr td.col-order {
+        font-size: 15px;
+        color: #0000ff;
+    }
+
+    div.list-student table tr td:last-child {
+        border-bottom: none;
+    }
+
+    div.list-student table tr td::before {
+        content: attr(data-student-info);
+        float: left;
+        font-weight: bold;
+        margin-right: 25px;
+    }
+
+    div.list-student table tr td.col-order::before {
+        font-size: 14px;
+        color: #000000;
+    }
+
+    div.list-student table tr td div {
+        padding: 5px 10px;
+        margin-top: -5px;
+    }
+
+    div.list-student table tr.hidden-row, 
+    div.list-student table tr.deleted-row {
+        max-height: 0px;
+        overflow: hidden;
+        height: 100%;
+        padding: 0px 8px;
+        border: none;
+        margin-bottom: 0px;
+        box-shadow: 0 0 5px #aaaaaa;
+        transition: max-height 0.5s, padding 0.8s, margin-bottom 0.6s linear;
+    }
+
+    div.list-student table tr.deleted-row:last-child {
+        margin-top: -20px;
+        transition: max-height 0.5s, padding 0.8s, margin-top 0.6s linear;
+    }
+
+    div.list-student table tr.hidden-row td div, 
+    div.list-student table tr.deleted-row td div {
+        max-height: 200px;
+        padding: 5px 10px;
+        overflow: hidden;
+        transition: none;
+    }
+
+    div.list-student table tr.added-row {
+        max-height: 800px;
+        padding: 4px 8px;
+        border: 1px solid #cccccc;
+        border-bottom-width: 2px;
+        margin-bottom: 20px;
+        transition: max-height 2.5s, padding 0.4s, margin-bottom 0.4s linear, 
+                    background-color 0.35s ease-in-out;
+    }
+
+    div button#btnMaximizeForm {
+        left: 6.5%;
+    }
+
+    div.notification {
+        width: 210px;
+        height: 50px;
+        font-size: 12px;
+        right: 25px;
+    }
+
+    div.add-notification, 
+    div.update-notification, 
+    div.delete-notification, 
+    div.alert-notification {
+        bottom: 20px;
+    }
+
+    div.alert-notification {
+        width: 250px;
+        height: auto;
+    }
+
+    div.help-setting-box-container div.help-setting-box ul li, 
+    div.help-setting-box-container div.help-setting-box ul li:last-child {
+        padding-top: 8.75px;
+        padding-bottom: 8.75px;
+    }
+
+    div#divOpeningIntro div.header-area {
+        top: 50px;
+    }
+
+    div#divOpeningIntro.visible-overlay div.header-area {
+        top: 50px;
+    }
+
+    div#divOpeningIntro div.main-area h2 {
+        font-size: 28px;
+        margin-bottom: 25px;
+    }
+
+    div#divOpeningIntro div.main-area h3 {
+        font-size: 22px;
+        margin-bottom: 40px;
+    }
+
+    div#divOpeningIntro div.main-area div.line {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    div.form-student {
+        width: 96%;
+    }
+
+    div.form-student input[type="text"] {
+        width: calc(100% - 140px);
+    }
+
+    div.form-student div#divResetStudentInfo {
+        margin-left: calc(100% - 277px);
+    }
+
+    div.list-student table tr.error-info {
+        font-size: 13px;
+    }
+
+    div.list-student button#btnScrollTop {
+        padding: 3px 6px;
+    }
+
+    div button#btnMaximizeForm {
+        left: 7.5%;
+    }
+
+    div.notification {
+        right: 18px;
+    }
+
+    div#winHelpFilterSearch.popup-window, 
+    div#winListShortcutKeys.popup-window, 
+    div#winIntroduceProduct.popup-window {
+        width: 96%;
+    }
+
+    div#winHelpFilterSearch.visible-popup-window, 
+    div#winListShortcutKeys.visible-popup-window, 
+    div#winIntroduceProduct.visible-popup-window {
+        top: 50%;
+    }
+
+    div#winHelpFilterSearch.popup-window div.main-area h3 {
+        font-size: 18px;
+    }
+
+    div#winListShortcutKeys.popup-window div.main-area h3 {
+        font-size: 17px;
+    }
+
+    div.popup-window div.main-area div.example {
+        margin-left: 20px;
+    }
+
+    div.popup-window div.main-area div.example div.heading div.text, 
+    div.popup-window div.main-area div.example div.content div.text {
+        line-height: 1.6;
+        margin-top: -2px;
+    }
+
+    div.popup-window div.main-area div.line {
+        margin: 0px 15px 8px;
+    }
+
+    div.popup-window div.main-area div.line:last-child {
+        margin-bottom: 18px;
+    }
+
+    div.popup-window div.main-area div.line div.content {
+        line-height: 1.8;
+        margin-top: -4px;
+    }
+
+    div#winAlertBeforeChange, 
+    div#winConfirmBeforeChange, 
+    div#winProcessBeforeChange {
+        width: 94%;
+    }
+}
+
+@media only screen and (max-width: 420px) {
+    div.form-student {
+        width: 98%;
+    }
+
+    div.form-student label {
+        width: 110px;
+    }
+
+    div.form-student input[type="text"] {
+        width: calc(100% - 110px);
+    }
+
+    div.form-student div#divResetStudentInfo {
+        margin-left: calc(100% - 248px);
+    }
+
+    div.list-student {
+        width: 98%;
+    }
+
+    div.list-student button#btnScrollTop {
+        padding: 3px 5px;
+    }
+
+    div.notification {
+        right: 12px;
+    }
+
+    div.add-notification, 
+    div.update-notification, 
+    div.delete-notification, 
+    div.alert-notification {
+        bottom: 16px;
+    }
+
+    div#boxNotification div.setting-notification label {
+        font-size: 13.5px;
+    }
+
+    div#boxNotification div.setting-notification label.switch-notification {
+        width: 40px;
+        height: 24px;
+        margin-top: -3px;
+    }
+
+    label.switch-notification span.inner-circle::before {
+        width: 20px;
+        height: 20px;
+    }
+
+    label.switch-notification input[type="checkbox"]:checked + span.inner-circle::before {
+        left: 0px;
+        transform: translateX(20px);
+    }
+
+    div.help-setting-box-container div.help-setting-box {
+        width: 109%;
+    }
+
+    div.help-setting-box-container div.help-setting-box ul li, 
+    div.help-setting-box-container div.help-setting-box ul li:first-child, 
+    div.help-setting-box-container div.help-setting-box ul li:last-child {
+        padding-top: 8.5px;
+        padding-bottom: 8.5px;
+    }
+
+    div#divOpeningIntro div.main-area {
+        top: 45%;
+    }
+
+    div#divOpeningIntro.visible-overlay div.main-area {
+        top: 45%;
+    }
+
+    div#winAlertBeforeChange, 
+    div#winConfirmBeforeChange {
+        top: calc(48% + 10px);
+    }
+
+    div#winConfirmBeforeChange.import-students {
+        top: calc(49% + 10px);
+    }
+
+    div#winProcessBeforeChange {
+        top: calc(45% + 10px);
+    }
+}
+
+@media only screen and (max-width: 380px) {
+    body {
+        font-size: 13px;
+    }
+
+    h3 {
+        font-size: 16.38px;
+    }
+
+    div.form-student label {
+        width: 100px;
+    }
+
+    div.form-student input[type="text"] {
+        width: calc(100% - 100px);
+    }
+
+    div.form-student div#divErrorInfo ul li {
+        font-size: 12.5px;
+    }
+
+    div.form-student button#btnSaveStudentInfo {
+        font-size: 14px;
+        width: 108px;
+    }
+
+    div.form-student div#divResetStudentInfo {
+        margin-left: calc(100% - 231px);
+        font-size: 22px;
+    }
+
+    div.list-student table tr {
+        font-size: 13px;
+    }
+
+    div.list-student table tr.no-data-found {
+        font-size: 13px;
+    }
+
+    div.list-student table tr.error-info {
+        font-size: 12.5px;
+    }
+
+    div.list-student table tr td.col-order {
+        font-size: 14px;
+    }
+
+    div.list-student table tr td.col-order::before {
+        font-size: 13px;
+    }
+
+    div#boxFilterSearch div.setting-filter-search input[type="text"] {
+        padding: 8px 13px;
+    }
+
+    div#boxFilterSearch div.setting-filter-search input[type="text"]::placeholder {
+        font-size: 11px;
+    }
+
+    div#boxFilterSearch div.setting-filter-search button#btnClearText {
+        right: -5px;
+        top: 1px;
+        font-size: 14px;
+    }
+
+    div#boxFilterSearch div.setting-filter-search div.setting-gender {
+        width: 100%;
+        height: 31px;
+    }
+
+    @supports (-moz-appearance: none) {
+        div#boxFilterSearch div.setting-filter-search div.setting-gender {
+            height: 32px;
+        }
+    }
+
+    @supports (-ms-ime-align: auto) {
+        div#boxFilterSearch div.setting-filter-search div.setting-gender {
+            height: 32px;
+        }
+    }
+
+    div.setting-gender select#selGender {
+        padding-left: 32%;
+    }
+
+    div#boxFilterSearch div.setting-filter-search button#btnFilterSearch {
+        display: block;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    div#boxFilterSearch div.setting-filter-search button#btnDownloadFile {
+        float: none;
+        display: block;
+        width: 100%;
+    }
+
+    div#boxImportSampleData div.import-setting-box-container {
+        padding: 5px 0px 10px;
+    }
+
+    div#boxImportSampleData div.import-setting-box-container button#btnImportSampleData {
+        display: block;
+        width: 100%;
+    }
+
+    div#boxImportSampleData div.import-setting-box-container button#btnImportSampleData span.down-arrow {
+        margin-left: 20px;
+    }
+
+    div#boxImportSampleData div.import-setting-box-container div.import-setting-box {
+        width: 100%;
+    }
+
+    div#boxImportSampleData div.import-setting-box-container div.import-setting-box ul li {
+        font-size: 12.5px;
+    }
+
+    div#boxNotification div.setting-notification label {
+        font-size: 12.5px;
+    }
+
+    div#boxNotification div.setting-notification label.switch-notification {
+        width: 36px;
+        height: 22px;
+        margin-top: -2px;
+    }
+
+    label.switch-notification span.inner-circle::before {
+        width: 18px;
+        height: 18px;
+    }
+
+    label.switch-notification input[type="checkbox"]:checked + span.inner-circle::before {
+        transform: translateX(18px);
+    }
+
+    div.help-setting-box-container div.help-setting-box {
+        width: 110%;
+    }
+
+    div.help-setting-box-container div.help-setting-box ul li {
+        padding-left: 15px;
+    }
+
+    div.help-setting-box-container div.help-setting-box ul li a i {
+        margin-right: 15px;
+    }
+
+    div.popup-window div.main-area h2 {
+        font-size: 23px;
+    }
+
+    div.popup-window div.main-area h3 {
+        font-size: 18px;
+    }
+
+    div#winHelpFilterSearch.popup-window div.main-area h3 {
+        font-size: 17px;
+    }
+
+    div#winListShortcutKeys.popup-window div.main-area h3 {
+        font-size: 16px;
+    }
+
+    div.popup-window div.main-area div.example {
+        margin-left: 15px;
+        margin-bottom: 12px;
+    }
+
+    div.popup-window div.main-area div.example div.heading div.text, 
+    div.popup-window div.main-area div.example div.content div.text {
+        line-height: 1.4;
+    }
+
+    div.popup-window div.main-area div.line div.content span.highlight {
+        display: inline-block;
+    }
+
+    div#divOpeningIntro div.header-area img {
+        width: 89px;
+    }
+
+    div#divOpeningIntro div.main-area {
+        width: 98%;
+    }
+
+    div#divOpeningIntro div.main-area h2 {
+        font-size: 25px;
+        margin-bottom: 25px;
+    }
+
+    div#divOpeningIntro div.main-area h3 {
+        font-size: 20px;
+        margin-bottom: 30px;
+    }
+
+    div#divOpeningIntro div.main-area div.line {
+        font-size: 13px;
+        margin-bottom: 20px;
+    }
+
+    div#winAlertBeforeChange, 
+    div#winConfirmBeforeChange {
+        top: calc(53% + 5px);
+    }
+
+    div#winConfirmBeforeChange.import-students {
+        top: calc(55% + 5px);
+    }
+
+    div#winProcessBeforeChange {
+        top: calc(50% + 5px);
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    body {
+        font-size: 12px;
+    }
+
+    h3 {
+        font-size: 14.5px;
+    }
+
+    div.form-student label {
+        width: 90px;
+    }
+
+    div.form-student input[type="text"] {
+        width: calc(100% - 90px);
+    }
+
+    div.form-student div#divErrorInfo ul li {
+        font-size: 12px;
+    }
+
+    div.form-student button#btnSaveStudentInfo {
+        font-size: 13px;
+        width: 104px;
+    }
+
+    div.form-student div#divResetStudentInfo {
+        margin-left: calc(100% - 217px);
+    }
+
+    div.list-student table tr {
+        font-size: 12px;
+    }
+
+    div.list-student table tr.error-info {
+        font-size: 12px;
+    }
+
+    div.list-student table tr td {
+        padding: 5px 4px 0px;
+    }
+
+    div.list-student table tr td.col-order {
+        font-size: 13px;
+    }
+
+    div.list-student table tr td.col-order::before {
+        font-size: 12px;
+    }
+
+    div button#btnMaximizeForm {
+        left: 8%;
+    }
+
+    div.notification {
+        right: 10px;
+    }
+
+    div#boxFilterSearch div.setting-filter-search div.setting-gender {
+        height: 30px;
+    }
+
+    @supports (-moz-appearance: none) {
+        div#boxFilterSearch div.setting-filter-search div.setting-gender {
+            height: 31px;
+        }
+    }
+
+    @supports (-ms-ime-align: auto) {
+        div#boxFilterSearch div.setting-filter-search div.setting-gender {
+            height: 30px;
+        }
+    }
+
+    div.setting-gender select#selGender {
+        padding-left: 15px;
+    }
+
+    div#boxImportSampleData div.import-setting-box-container button#btnImportSampleData span.down-arrow {
+        margin-left: 15px;
+    }
+
+    div#boxNotification div.setting-notification label {
+        font-size: 11px;
+    }
+
+    div#boxNotification div.setting-notification label.switch-notification {
+        width: 30px;
+        height: 20px;
+    }
+
+    label.switch-notification span.inner-circle::before {
+        width: 16px;
+        height: 16px;
+    }
+
+    label.switch-notification input[type="checkbox"]:checked + span.inner-circle::before {
+        left: -2px;
+        transform: translateX(16px);
+    }
+
+    div.help-setting-box-container div.help-setting-box {
+        width: 112.5%;
+    }
+
+    div.help-setting-box-container div.help-setting-box ul li {
+        padding-left: 15px;
+        font-size: 12.5px;
+    }
+
+    div.help-setting-box-container div.help-setting-box ul li a i {
+        margin-right: 10px;
+    }
+
+    div.popup-window div.main-area h2 {
+        font-size: 22px;
+    }
+
+    div.popup-window div.main-area h3 {
+        font-size: 17px;
+    }
+
+    div#winHelpFilterSearch.popup-window div.main-area h3 {
+        font-size: 15.5px;
+    }
+
+    div#winListShortcutKeys.popup-window div.main-area h3 {
+        font-size: 14.5px;
+    }
+
+    div.popup-window div.main-area div.example {
+        margin-left: 12px;
+        margin-bottom: 10px;
+        font-size: 12px;
+    }
+
+    div.popup-window div.main-area div.example div.heading div.text, 
+    div.popup-window div.main-area div.example div.content div.text {
+        line-height: 1.4;
+    }
+
+    div.popup-window div.main-area div.example div.heading i {
+        margin-top: 0px;
+    }
+
+    div.popup-window div.main-area div.example div.content {
+        margin-top: 4px;
+    }
+
+    div.popup-window div.main-area div.line {
+        font-size: 12px;
+    }
+
+    div#divOpeningIntro div.main-area h2 {
+        font-size: 23px;
+    }
+
+    div#divOpeningIntro div.main-area h3 {
+        font-size: 18px;
+    }
+
+    div#divOpeningIntro div.main-area div.line {
+        font-size: 12.5px;
+    }
+
+    div#winAlertBeforeChange {
+        top: calc(61% + 10px);
+    }
+
+    div#winConfirmBeforeChange {
+        top: calc(60% + 10px);
+    }
+
+    div#winConfirmBeforeChange.import-students {
+        top: calc(63% + 10px);
+    }
+
+    div#winAlertBeforeChange div.header-area div.left-item, 
+    div#winConfirmBeforeChange div.header-area div.left-item {
+        font-size: 12px;
+    }
+
+    div#winAlertBeforeChange div.header-area div.right-item, 
+    div#winConfirmBeforeChange div.header-area div.right-item {
+        font-size: 22px;
+    }
+
+    div#winAlertBeforeChange div.main-area div.content {
+        padding: 12px 8px 12px 12px;
+    }
+
+    div#winAlertBeforeChange div.main-area div.content, 
+    div#winConfirmBeforeChange div.main-area div.content, 
+    div#winProcessBeforeChange div.main-area div.content {
+        font-size: 12px;
+    }
+
+    div#winAlertBeforeChange div.main-area div.action button, 
+    div#winConfirmBeforeChange div.main-area div.action button {
+        font-size: 13px;
+        padding: 3px 12px;
+    }
+
+    div#winProcessBeforeChange {
+        top: calc(57% + 12px);
+    }
+}

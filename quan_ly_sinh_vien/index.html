@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Student Management Program</title>
+    <link rel="shortcut icon" type="image/png" href="./images/suntech_logo.png"/>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&display=swap&subset=vietnamese" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="./css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/main-style.css">
+    <link rel="stylesheet" type="text/css" href="./css/opening-intro-style.css">
+    <link rel="stylesheet" type="text/css" href="./css/alert-window-style.css">
+    <link rel="stylesheet" type="text/css" href="./css/confirmation-window-style.css">
+    <link rel="stylesheet" type="text/css" href="./css/processing-window-style.css">
+    <link rel="stylesheet" type="text/css" href="./css/minimize-form-style.css">
+    <link rel="stylesheet" type="text/css" href="./css/advance-setting-style.css">
+    <link rel="stylesheet" type="text/css" href="./css/help-setting-style.css">
+    <link rel="stylesheet" type="text/css" href="./css/popup-window-style.css">
+    <link rel="stylesheet" type="text/css" href="./css/select-box-style.css">
+    <link rel="stylesheet" type="text/css" href="./css/switch-notification-style.css">
+    <link rel="stylesheet" type="text/css" href="./css/notification-style.css">
+    <link rel="stylesheet" type="text/css" href="./css/auto-scroll-style.css">
+    <link rel="stylesheet" type="text/css" href="./css/import-students-style.css">
+    <link rel="stylesheet" type="text/css" href="./css/responsive-style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-student">
+            <h3>Thông tin sinh viên</h3>
+
+            <label>Họ và Tên:</label>
+            <input type="text" id="txtFullName" tabindex="1">
+            <br>
+
+            <label>Địa chỉ Email:</label>
+            <input type="text" id="txtEmailAddress" tabindex="1">
+            <br>
+
+            <label>Số điện thoại:</label>
+            <input type="text" id="txtPhoneNumber" tabindex="1">
+            <br>
+
+            <label>Quê quán:</label>
+            <input type="text" id="txtHomeTown" tabindex="1">
+            <br>
+
+            <label id="lblGender">Giới tính:</label>
+            <input type="radio" name="gender" id="male" value="1" tabindex="1"> Nam
+            <input type="radio" name="gender" id="female" value="2" tabindex="1"> Nữ
+            <br>
+
+            <label></label>
+            <div id="divErrorInfo"></div>
+
+            <label></label>
+            <button type="button" id="btnSaveStudentInfo" value="add" tabindex="1">Thêm mới</button>
+            <div id="divResetStudentInfo" tabindex="1" title="Click để làm mới toàn bộ phần Thông tin sinh viên">
+                <i class="fa fa-refresh" aria-hidden="true"></i>
+            </div>
+
+            <button type="button" id="btnMinimizeForm" title="Click để ẩn Form Thông tin sinh viên">
+                <i class="fa fa-window-minimize" aria-hidden="true"></i>
+            </button>
+        </div>
+
+        <div class="list-student">
+            <h3>Danh sách sinh viên</h3>
+            <div class="advance-setting-container">
+                <div id="divAdvanceSettingIcon">
+                    <div class="menu-bar-item-1"></div>
+                    <div class="menu-bar-item-2"></div>
+                    <div class="menu-bar-item-3"></div>
+                </div>
+
+                <div class="setting-box-container hidden-setting-box-container-2" tabindex="-1">
+                    <div class="setting-box-header"></div>
+
+                    <div class="help-setting-box-container">
+                        <div id="divHelpSettingIcon" title="More Help Actions">
+                            <div class="help-icon-item"></div>
+                            <div class="help-icon-item"></div>
+                            <div class="help-icon-item"></div>
+                        </div>
+
+                        <div class="outer-angle-up-area hidden-angle-up-area"></div>
+                        <div class="inner-angle-up-area hidden-angle-up-area"></div>
+
+                        <div class="help-setting-box hidden-help-setting-box-2">
+                            <ul>
+                                <li id="litResetFilterSearchForm">
+                                    <a href="javascript:void(0);">
+                                        <i class="fa fa-refresh" aria-hidden="true"></i>Làm mới phần Tìm kiếm/Lọc
+                                    </a>
+                                </li>
+                                <li id="litResetWindowPosition">
+                                    <a href="javascript:void(0);">
+                                        <i class="fa fa-arrows-alt" aria-hidden="true"></i>Di chuyển Cửa sổ về vị trí ban đầu
+                                    </a>
+                                </li>
+                                <li id="litHelpFilterSearch">
+                                    <a href="javascript:void(0);">
+                                        <i class="fa fa-search-plus" aria-hidden="true"></i>Hướng dẫn sử dụng Tìm kiếm/Lọc
+                                    </a>
+                                </li>
+                                <li id="litListShortcutKeys">
+                                    <a href="javascript:void(0);">
+                                        <i class="fa fa-list-alt" aria-hidden="true"></i>Liệt kê các Phím tắt được cài đặt
+                                    </a>
+                                </li>
+                                <li id="litIntroduceProduct">
+                                    <a href="javascript:void(0);">
+                                        <i class="fa fa-info-circle" aria-hidden="true"></i>Giới thiệu thông tin về sản phẩm
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div id="divOverlayFullScreen" class="hidden-overlay">
+                            <div id="winHelpFilterSearch" class="popup-window hidden-popup-window"></div>
+                            <div id="winListShortcutKeys" class="popup-window hidden-popup-window"></div>
+                            <div id="winIntroduceProduct" class="popup-window hidden-popup-window"></div>
+                        </div>
+                    </div>
+
+                    <div class="setting-box" id="boxFilterSearch">
+                        <form id="frmFilterSearch" action="" method="">
+                            <div class="setting-filter-search">
+                                <input type="text" id="txtKeywordSearch" value="" placeholder="Tìm kiếm theo Họ Tên, Email & Số điện thoại">
+                                <button type="button" id="btnClearText">
+                                    <i class="fa fa-times-circle" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                            <div class="setting-filter-search">
+                                <div class="setting-gender">
+                                    <select id="selGender">
+                                        <option value="-1" disabled>Lọc theo Giới tính</option>
+                                        <option value="0">Tất cả Nam Nữ</option>
+                                        <option value="1">Sinh viên Nam</option>
+                                        <option value="2">Sinh viên Nữ</option>
+                                    </select>
+                                    <div class="down-arrow">&#9660;</div>
+                                </div>
+                            </div>
+                            <div class="setting-filter-search">
+                                <button type="button" id="btnFilterSearch">
+                                    Tìm kiếm<i class="fa fa-search" aria-hidden="true"></i>
+                                </button>
+                                <button type="button" id="btnDownloadFile">
+                                    Tải xuống<i class="fa fa-download" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="setting-box" id="boxImportSampleData">
+                        <div class="import-setting-box-container">
+                            <button type="button" id="btnImportSampleData">
+                                <i class="fa fa-cogs" aria-hidden="true"></i>
+                                Cài đặt dữ liệu mẫu
+                                <span class="down-arrow"></span>
+                            </button>
+                            <div class="import-setting-box hidden-import-setting-box-2">
+                                <ul>
+                                    <li id="litImportThreeNewStudents">
+                                        <a href="javascript:void(0);">
+                                            Danh sách 03 sinh viên mới
+                                        </a>
+                                    </li>
+                                    <li id="litImportFiveNewStudents">
+                                        <a href="javascript:void(0);">
+                                            Danh sách 05 sinh viên mới
+                                        </a>
+                                    </li>
+                                    <li id="litImportTenNewStudents">
+                                        <a href="javascript:void(0);">
+                                            Danh sách 10 sinh viên mới
+                                        </a>
+                                    </li>
+                                    <li id="litImportFifteenNewStudents">
+                                        <a href="javascript:void(0);">
+                                            Danh sách 15 sinh viên mới
+                                        </a>
+                                    </li>
+                                    <li id="litImportTwentyNewStudents">
+                                        <a href="javascript:void(0);">
+                                            Danh sách 20 sinh viên mới
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="setting-box" id="boxNotification">
+                        <div class="setting-notification">
+                            <label>Gửi thông báo sau khi Thêm mới</label>
+                            <label class="switch-notification">
+                                <input type="checkbox" id="chkNotificationAdd">
+                                <span class="inner-circle"></span>
+                            </label>
+                        </div>
+                        <div class="setting-notification">
+                            <label>Gửi thông báo sau khi Cập nhật</label>
+                            <label class="switch-notification">
+                                <input type="checkbox" id="chkNotificationUpdate">
+                                <span class="inner-circle"></span>
+                            </label>
+                        </div>
+                        <div class="setting-notification">
+                            <label>Gửi thông báo sau khi Xóa bỏ</label>
+                            <label class="switch-notification">
+                                <input type="checkbox" id="chkNotificationDelete">
+                                <span class="inner-circle"></span>
+                            </label>
+                        </div>
+                        <div class="setting-notification">
+                            <label>Chạy đoạn Giới thiệu mở đầu</label>
+                            <label class="switch-notification">
+                                <input type="checkbox" id="chkOpeningIntroRun">
+                                <span class="inner-circle"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="setting-box-footer"></div>
+                </div>
+            </div>
+            <table id="tblStudentInfoList"></table>
+            <button type="button" id="btnScrollTop" title="Click để trở về đầu trang">
+                <i class="fa fa-angle-up" aria-hidden="true"></i>
+            </button>
+        </div>
+
+        <div>
+            <button type="button" id="btnMaximizeForm" title="Click để hiển thị Form Thông tin sinh viên">
+                <i class="fa fa-window-maximize" aria-hidden="true"></i>
+            </button>
+        </div>
+    </div>
+
+    <div id="divOpeningIntro" class="hidden-overlay">
+        <div class="header-area">
+            <a href="https://www.facebook.com/suntech.edu.vn" target="_blank">
+                <img src="./images/suntech_logo.png" 
+                     alt="Trung tâm Đào tạo Lập trình SUNTECH VIỆT NAM" 
+                     title="Trung tâm Đào tạo Lập trình SUNTECH VIỆT NAM">
+            </a>
+        </div>
+        <div class="main-area hidden-main-area">
+            <h2>JavaScript Case Study</h2>
+            <h3>Chương trình Quản lý Sinh viên</h3>
+            <div class="line">
+                Tùng Nguyễn - Học viên <span class="highlight">Lớp Front End 4</span>
+            </div>
+            <div class="line">
+                Trung tâm Đào tạo Lập trình <span class="highlight">SUNTECH VIỆT NAM</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="boxAlertContainer" class="hidden-overlay" tabindex="0">
+        <div id="winAlertBeforeChange" class="hidden-window hidden-window-2" tabindex="0"></div>
+    </div>
+
+    <div id="boxConfirmContainer" class="hidden-overlay" tabindex="0">
+        <div id="winConfirmBeforeChange" class="hidden-window hidden-window-2" tabindex="0"></div>
+    </div>
+
+    <div id="boxProcessContainer" class="hidden-overlay" tabindex="0">
+        <div id="winProcessBeforeChange" class="hidden-window hidden-window-2" tabindex="0"></div>
+    </div>
+
+    <div id="divAddNotificationList"></div>
+    <div id="divUpdateNotificationList"></div>
+    <div id="divDeleteNotificationList"></div>
+    <div id="divAlertNotificationList"></div>
+
+    <script src="./js/main-app.js"></script>
+    <script src="./js/opening-intro.js"></script>
+    <script src="./js/synchronize-data.js"></script>
+    <script src="./js/alert-window.js"></script>
+    <script src="./js/confirmation-window.js"></script>
+    <script src="./js/processing-window.js"></script>
+    <script src="./js/validate-form.js"></script>
+    <script src="./js/common-utils.js"></script>
+    <script src="./js/minimize-form.js"></script>
+    <script src="./js/advance-setting.js"></script>
+    <script src="./js/move-window.js"></script>
+    <script src="./js/help-setting.js"></script>
+    <script src="./js/popup-window.js"></script>
+    <script src="./js/notification.js"></script>
+    <script src="./js/auto-scroll.js"></script>
+    <script src="./js/filter-search.js"></script>
+    <script src="./js/download-file.js"></script>
+    <script src="./js/import-students.js"></script>
+    <script src="./js/handle-exception.js"></script>
+</body>
+</html>

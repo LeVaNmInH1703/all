@@ -1,0 +1,56 @@
+
+div#boxNotification div.setting-notification label {
+    cursor: text;
+}
+
+div#boxNotification div.setting-notification label.switch-notification {
+    float: right;
+    display: inline-block;
+    width: 50px;
+    height: 28px;
+    position: relative;
+    margin-top: -5px;
+}
+
+label.switch-notification input[type="checkbox"] {
+    opacity: 0;
+    width: 0px;
+    height: 0px;
+}
+
+label.switch-notification span.inner-circle {
+    position: absolute;
+    top: 0px;
+    left: -2px;
+    right: 0px;
+    bottom: 0px;
+
+    cursor: pointer;
+    border: 1px solid #d9dadc;
+    border-radius: 50px;
+    background-color: #ffffff;
+    transition: all 0.25s linear;
+}
+
+label.switch-notification span.inner-circle::before {
+    content: "";
+    position: absolute;
+    left: -2px;
+    bottom: 0px;
+
+    width: 24px;
+    height: 24px;
+    border: 1px solid #d9dadc;
+    border-radius: 50%;
+    background-color: #ffffff;
+    transition: transform 0.25s linear;
+}
+
+label.switch-notification input[type="checkbox"]:checked + span.inner-circle {
+    background-color: #4ed164;
+}
+
+label.switch-notification input[type="checkbox"]:checked + span.inner-circle::before {
+    left: 1px;
+    transform: translateX(24px);
+}
