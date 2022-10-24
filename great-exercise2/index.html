@@ -133,13 +133,31 @@
           <img src="images/user.png" alt="" class="sign-up__img" />
           <div class="sign-up__account">
             <label for="">User name</label>
-            <input type="text" /><br />
+            <input type="text" id="sign-up__username" /><br />
+            <div id="sign-up__username-null" style="color: red; display: none">
+              <i class="fa-solid fa-circle-xmark"></i>nhập tên đăng nhập
+            </div>
             <label for="">Pass word</label>
-            <input type="password" /><br />
+            <input type="password" id="sign-up__password" /><br />
+            <div id="sign-up__password-null" style="color: red; display: none">
+              <i class="fa-solid fa-circle-xmark"></i>nhập mật khẩu
+            </div>
             <label for="">Confirm password</label>
-            <input type="password" />
+            <input type="password" id="sign-up__confirm-password" />
+            <div
+              id="sign-up__confirm-password-null"
+              style="color: red; display: none"
+            >
+              <i class="fa-solid fa-circle-xmark"></i>nhập lại mật khẩu
+            </div>
+            <div
+              id="sign-up__confirm-password-false"
+              style="color: red; display: none"
+            >
+              <i class="fa-solid fa-circle-xmark"></i>không khớp
+            </div>
           </div>
-          <button class="sign-up__btn">Sign up</button>
+          <button class="sign-up__btn" onclick="signUp();">Sign up</button>
 
           <div class="sign-up__login">
             You have account
@@ -185,4 +203,5 @@
   <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
   <script src="js/main.js"></script>
   <script src="js/userlogin.js"></script>
+  <script src="js/usersignup.js"></script>
 </html>

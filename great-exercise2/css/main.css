@@ -390,6 +390,25 @@ body{
     position: absolute;
     color: var(--text-color);
 }
+#sign-up__username-null,
+#sign-up__password-null,
+#sign-up__confirm-password-null,
+#sign-up__confirm-password-false{
+    position: absolute;
+    right: 0px;
+}
+#sign-up__confirm-password-false{
+    top:70px ;
+}
+#sign-up__username-null{
+    top: 20px;
+}
+#sign-up__password-null{
+    top:50px;
+}
+#sign-up__confirm-password-null{
+    top: 70px;
+}
 .sign-up__btn{
     transform:translateY(-50%) ;
     width: 100%;
