@@ -1,3 +1,8 @@
+if (localStorage.getItem('students') == null) {
+    localStorage.setItem('students', '');
+    localStorage.setItem('now', 'null');
+}
+
 var loginPage = document.getElementById('login');
 var signUpPage = document.getElementById('sign-up');
 window.onclick = function (event) {
