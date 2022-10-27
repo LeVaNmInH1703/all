@@ -65,9 +65,6 @@ html{
 
 
 
-
-
-
 /* nav */
 .nav{
     position: absolute;
@@ -279,6 +276,17 @@ html{
 
 
 
+#btn-save,#btn-edit{
+    display: flex;
+    justify-content: right;
+    padding: 0 5%;
+    margin-top: 30px;
+}
+#btn-save button,#btn-edit button{
+    margin-right: 20px;
+    cursor: pointer;
+    padding: 3px 5px;
+}
 
 /* footer */
 .footer{
@@ -393,29 +401,11 @@ html{
     }
 }
 
-/* điện thoại */
+#user-name,#user-msv{
+    outline: #2467ae;
+    border:1px solid #333;
+    padding: 5px 8px;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
 
-/* @media (max-width:739px){
-    .form__row1,.form__row2,.form__row3{
-        flex-direction: column;
-    }
-    html{
-        font-size: 20%;
-    }
-    .header__user{
-        width: 40%;
-    }
-    .header__user-ctn{
-        margin: 5px 10px;
-    }
-    .form .data,#select-filter{
-        max-width: 80%;
-        width: 100vw;
-    }
-    .data .form__control{
-        width: 100%;
-    }
-    .header{
-        height: 35px;
-    }
-} */

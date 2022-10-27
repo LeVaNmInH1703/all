@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>Hệ thống quản lý điểm sinh viên</title>
+    <title>2</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" href="images/logo-big.png" />
     <link rel="stylesheet" href="css/main.css" />
@@ -14,7 +14,7 @@
       referrerpolicy="no-referrer"
     />
   </head>
-  <body onload="test();">
+  <body>
     <div class="container">
       <div class="header">
         <div class="header__info">
@@ -28,18 +28,24 @@
             <li class="header__info-item">
               <button
                 class="header__info-link btn-sign-in"
+                id="btn-sign-in"
                 onclick="document.getElementById('login').style.display='block';"
               >
                 ĐĂNG NHẬP
               </button>
+              <div id="hello-user">Xin chào</div>
             </li>
             <li class="header__info-item">
               <button
                 class="header__info-link btn-sign-up"
+                id="btn-sign-up"
                 onclick="document.getElementById('sign-up').style.display='block';"
               >
                 ĐĂNG KÍ
               </button>
+              <div id="log-out-btn" class="log-out-btn" onclick="logOut();">
+                Đăng Xuất
+              </div>
             </li>
           </ul>
         </div>
@@ -78,10 +84,20 @@
               <a href="" class="header__nav-link">TIN TỨC</a>
             </li>
             <li class="header__nav-item">
-              <a href="transcript.html" class="header__nav-link">XEM ĐIỂM</a>
+              <a
+                href="javascript:void(0);"
+                class="header__nav-link"
+                onclick="checkLogin(true);"
+                >XEM ĐIỂM</a
+              >
             </li>
             <li class="header__nav-item">
-              <a href="" class="header__nav-link">THÊM ĐIỂM</a>
+              <a
+                href="javascript:void(0);"
+                class="header__nav-link"
+                onclick="checkLogin(false);"
+                >SỬA ĐIỂM</a
+              >
             </li>
           </ul>
         </div>
@@ -96,13 +112,19 @@
             <label for="username">User name</label>
             <input type="text" id="login__username" />
             <div id="login__username-null" style="color: red; display: none">
-              <i class="fa-solid fa-circle-xmark"></i>chưa nhập tên đăng nhập
+              <i
+                class="fa-solid fa-circle-xmark"
+                title="chưa nhập tên đăng nhập"
+              ></i>
             </div>
             <br />
             <label for="passwword">Pass word</label>
             <input type="password" id="login__password" />
             <div id="login__password-null" style="color: red; display: none">
-              <i class="fa-solid fa-circle-xmark"></i>chưa nhập mật khẩu
+              <i
+                class="fa-solid fa-circle-xmark"
+                title="chưa nhập mật khẩu"
+              ></i>
             </div>
             <br />
           </div>
@@ -135,12 +157,18 @@
             <label for="">User name</label>
             <input type="text" id="sign-up__username" /><br />
             <div id="sign-up__username-null" style="color: red; display: none">
-              <i class="fa-solid fa-circle-xmark"></i>nhập tên đăng nhập
+              <i
+                class="fa-solid fa-circle-xmark"
+                title="chưa nhập tên đăng nhập"
+              ></i>
             </div>
             <label for="">Pass word</label>
             <input type="password" id="sign-up__password" /><br />
             <div id="sign-up__password-null" style="color: red; display: none">
-              <i class="fa-solid fa-circle-xmark"></i>nhập mật khẩu
+              <i
+                class="fa-solid fa-circle-xmark"
+                title="chưa nhập mật khẩu"
+              ></i>
             </div>
             <label for="">Confirm password</label>
             <input type="password" id="sign-up__confirm-password" />
@@ -148,13 +176,19 @@
               id="sign-up__confirm-password-null"
               style="color: red; display: none"
             >
-              <i class="fa-solid fa-circle-xmark"></i>nhập lại mật khẩu
+              <i
+                class="fa-solid fa-circle-xmark"
+                title="chưa xác minh mật khẩu"
+              ></i>
             </div>
             <div
               id="sign-up__confirm-password-false"
               style="color: red; display: none"
             >
-              <i class="fa-solid fa-circle-xmark"></i>không khớp
+              <i
+                class="fa-solid fa-circle-xmark"
+                title="xác minh mật khẩu thất bại"
+              ></i>
             </div>
           </div>
           <button class="sign-up__btn" onclick="signUp();">Sign up</button>
@@ -174,33 +208,111 @@
 
       <div class="body">
         <div class="body__big-img-ctn">
-          <img
-            src="images/big-img1.png"
-            alt=""
-            class="body__big-img"
-            id="big-img1"
-          />
-          <img
-            src="images/big-img2.png"
-            alt=""
-            class="body__big-img"
-            id="big-img2"
-          />
-          <img
-            src="images/big-img3.png"
-            alt=""
-            class="body__big-img"
-            id="big-img3"
-          />
+          <div class="body__big-img"></div>
+          <div class="body__introduce">
+            <h1 class="body__introduce-title">GIỚI THIỆU</h1>
+            <p class="body__introduce-para">Nhóm 6</p>
+            <div class="body__introduce-content">
+              <div class="body__introduce-info" id="info-designer1">
+                <div class="body__introduce-info-name">Lê Văn Minh</div>
+              </div>
+              <div class="body__introduce-info" id="info-designer2">
+                <div class="body__introduce-info-name">Lê Văn Minh</div>
+              </div>
+              <div class="body__introduce-info" id="info-designer3">
+                <div class="body__introduce-info-name">Lê Văn Minh</div>
+              </div>
+              <div class="body__introduce-info" id="info-designer4">
+                <div class="body__introduce-info-name">Lê Văn Minh</div>
+              </div>
+              <div class="body__introduce-info" id="info-designer5">
+                <div class="body__introduce-info-name">Lê Văn Minh</div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="body__news">
-          <div class="body__news-title">TIN NỔI BẬT</div>
-          <div class="body__news-content"></div>
+
+        <div class="body__the-news-ctn">
+          <div class="body__the-news-title">TIN NỔI BẬT</div>
+          <div class="body__the-news-content">
+            <div class="body__news">
+              <a
+                class="body-news__link"
+                href="https://utc.edu.vn/le-khai-giang-nam-hoc-2022-2023"
+                >Đọc tiếp</a
+              >
+              <div class="body__news-img news1-img">
+                <div class="body__news-content"></div>
+                <div class="layout-news-img">
+                  <h3>19 tháng 10</h3>
+                  <br />
+                  Lễ khai giảng năm học 2022-2022
+                </div>
+              </div>
+            </div>
+
+            <div class="body__news">
+              <a
+                class="body-news__link"
+                href="https://utc.edu.vn/doi-tuyen-dien-kinh-sinh-vientruong-dai-hoc-giao-thong-van-tai-gianh-giai-ba-giai-chay-bao-hanoimoi-lan-thu-47-vi-hoa-binh-nam-2022"
+                >Đọc tiếp</a
+              >
+              <div class="body__news-img news2-img">
+                <div class="body__news-content">
+                  <div class="layout-news-img">
+                    <h3>3 tháng 10</h3>
+                    <br />
+                    Đội tuyển điền kinh sinh viên Trường Đại học Giao thông vận
+                    tải giành giải Ba giải chạy Báo Hànộimới lần thứ 4...
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="body__news">
+              <a
+                class="body-news__link"
+                href="https://utc.edu.vn/truong-dai-hoc-giao-thong-van-tai-tham-gia-trien-lam-giao-duc-dai-hoc-viet-nam-tai-thu-do-vientiane-cua-lao"
+                >Đọc tiếp</a
+              >
+              <div class="body__news-img news3-img">
+                <div class="body__news-content">
+                  <div class="layout-news-img">
+                    <h3>5 tháng 10</h3>
+                    <br />
+                    Trường Đại học Giao thông vận tải tham gia Triển lãm giáo
+                    dục đại học Việt Nam tại thủ đô Vientiane của...
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="body__news">
+              <a
+                class="body-news__link"
+                href="https://utc.edu.vn/doi-tuyen-bong-da-nam-sinh-vien-truong-dai-hoc-gtvt-gianh-quyen-tham-du-giai-bong-da-sinh-vien-toan-quoc-sv-champions-league-nam-2022"
+                >Đọc tiếp</a
+              >
+              <div class="body__news-img news4-img">
+                <div class="body__news-content">
+                  <div class="layout-news-img">
+                    <h3>29 tháng 9</h3>
+                    <br />
+                    Đội tuyển bóng đá nam sinh viên Trường Đại học GTVT giành
+                    quyền tham dự Giải bóng đá Sinh viên toàn...
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
+
+      <div class="footer">
+        <h3>&#169; Bản Quyền Thuộc Về Nhóm 6</h3>
       </div>
     </div>
   </body>
-  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
   <script src="js/main.js"></script>
   <script src="js/userlogin.js"></script>
   <script src="js/usersignup.js"></script>
