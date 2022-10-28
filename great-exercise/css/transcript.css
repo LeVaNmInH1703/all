@@ -274,20 +274,6 @@ html{
     border-right: 1px solid rosybrown;
 }
 
-
-
-#btn-save,#btn-edit{
-    display: flex;
-    justify-content: right;
-    padding: 0 5%;
-    margin-top: 30px;
-}
-#btn-save button,#btn-edit button{
-    margin-right: 20px;
-    cursor: pointer;
-    padding: 3px 5px;
-}
-
 /* footer */
 .footer{
     margin-top: 10rem;
@@ -401,7 +387,7 @@ html{
     }
 }
 
-#user-name,#user-msv{
+#user-name{
     outline: #2467ae;
     border:1px solid #333;
     padding: 5px 8px;

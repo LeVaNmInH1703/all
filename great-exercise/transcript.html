@@ -14,15 +14,13 @@
       referrerpolicy="no-referrer"
     />
   </head>
-  <body onload="loginSuccess();">
+  <body>
     <div class="container">
       <div class="header">
         <h1 class="header__title">HỆ THỐNG THÔNG TIN TRƯỜNG ĐẠI HỌC</h1>
         <div class="header__user">
           <div class="header__user-ctn">
-            <div class="header__user-name">
-              <div id="header__user-name"></div>
-            </div>
+            <div class="header__user-name"></div>
             <div class="header__user-role">Vai trò: Sinh viên</div>
             <a href="#" class="header__user-ms">Hộp tin nhắn</a>
           </div>
@@ -35,7 +33,7 @@
             <a class="nav__list-link" href="index.html">Trang chủ</a>
           </li>
           <li class="nav__list-item">
-            <a class="nav__list-link" href="#">Thoát</a>
+            <a class="nav__list-link" href="index.html">Thoát</a>
           </li>
           <li class="nav__list-item">
             <a class="nav__list-link" href="#">Hỏi đáp</a>
@@ -240,31 +238,16 @@
             <th style="width: 3%">THI</th>
             <th style="width: 3%">KTHP</th>
           </tr>
-          <tr class="table2__semester2 giao-duc-the-chat-f2">
-            <td>1</td>
-            <td>PE0.002.1</td>
-            <td>Giáo dục thể chất F2</td>
-            <td>1</td>
-            <td>1</td>
+          <tr class="table2__semester1 giao-duc-the-chat-f1">
+            <td>17</td>
+            <td>PE0.001.1</td>
+            <td>Giáo dục thể chất F1</td>
             <td>1</td>
             <td>1</td>
-            <td>0</td>
-            <td>DAT</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
             <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr class="table2__semester2 ky-thuat-lap-trinh">
-            <td>2</td>
-            <td>IT1.103.3</td>
-            <td>Kỹ thuật lập trình</td>
-            <td>3</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>0</td>
-            <td>DAT</td>
             <td></td>
             <td></td>
             <td></td>
@@ -279,172 +262,7 @@
             <td>1</td>
             <td>1</td>
             <td>1</td>
-            <td>DAT</td>
             <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr class="table2__semester2 kinh-te-chinh-tri-mac-lenin">
-            <td>4</td>
-            <td>PS0.002.2</td>
-            <td>Kinh tế chính trị Mác- Lênin</td>
-            <td>2</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>0</td>
-            <td>DAT</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr class="table2__semester1 triet-hoc-mac-lenin">
-            <td>5</td>
-            <td>PS0.001.3</td>
-            <td>Triết học Mác- Lênin</td>
-            <td>3</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>0</td>
-            <td>DAT</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr class="table2__semester1 dai-so-tuyen-tinh">
-            <td>6</td>
-            <td>BS0.101.3</td>
-            <td>Đại số tuyến tính</td>
-            <td>3</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>0</td>
-            <td>DAT</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr class="table2__semester2 giao-duc-quoc-phong-an-ninh-3">
-            <td>7</td>
-            <td>DE0.003.1</td>
-            <td>Giáo dục quốc phòng- an ninh 3</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>0</td>
-            <td>DAT</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr class="table2__semester1 vat-ly">
-            <td>8</td>
-            <td>BS0.201.3</td>
-            <td>Vật lý</td>
-            <td>3</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>0</td>
-            <td>DAT</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr class="table2__semester2 giao-duc-quoc-phong-an-ninh-4">
-            <td>9</td>
-            <td>DE0.004.2</td>
-            <td>Giáo dục quốc phòng- an ninh 4</td>
-            <td>2</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>DAT</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr class="table2__semester2 xac-suat-thong-ke">
-            <td>10</td>
-            <td>BS0.105.3</td>
-            <td>Xác suất thống kê</td>
-            <td>3</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>0</td>
-            <td>DAT</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr class="table2__semester2 chu-nghia-xa-hoi-khoa-hoc">
-            <td>11</td>
-            <td>PS0.003.2</td>
-            <td>Chủ nghĩa xã hội khoa học</td>
-            <td>2</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>0</td>
-            <td>DAT</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr class="table2__semester1 bao-tri-he-thong">
-            <td>12</td>
-            <td>IT1.002.2</td>
-            <td>Bảo trì hệ thống</td>
-            <td>2</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>0</td>
-            <td>DAT</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr class="table2__semester1 tin-hoc-dai-cuong">
-            <td>13</td>
-            <td>IT0.004.2</td>
-            <td>Tin học đại cương</td>
-            <td>2</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>0</td>
-            <td>DAT</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr class="table2__semester2 giao-duc-quoc-phong-an-ninh-2">
-            <td>14</td>
-            <td>DE0.002.2</td>
-            <td>Giáo dục quốc phòng- an ninh 2</td>
-            <td>2</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>0</td>
-            <td>DAT</td>
             <td></td>
             <td></td>
             <td></td>
@@ -459,12 +277,212 @@
             <td>1</td>
             <td>1</td>
             <td>0</td>
-            <td>DAT</td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
             <td></td>
           </tr>
+          <tr class="table2__semester1 triet-hoc-mac-lenin">
+            <td>5</td>
+            <td>PS0.001.3</td>
+            <td>Triết học Mác- Lênin</td>
+            <td>3</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="table2__semester1 tin-hoc-dai-cuong">
+            <td>13</td>
+            <td>IT0.004.2</td>
+            <td>Tin học đại cương</td>
+            <td>2</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="table2__semester1 bao-tri-he-thong">
+            <td>12</td>
+            <td>IT1.002.2</td>
+            <td>Bảo trì hệ thống</td>
+            <td>2</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="table2__semester1 dai-so-tuyen-tinh">
+            <td>6</td>
+            <td>BS0.101.3</td>
+            <td>Đại số tuyến tính</td>
+            <td>3</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="table2__semester1 vat-ly">
+            <td>8</td>
+            <td>BS0.201.3</td>
+            <td>Vật lý</td>
+            <td>3</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="table2__semester2 giao-duc-the-chat-f2">
+            <td>1</td>
+            <td>PE0.002.1</td>
+            <td>Giáo dục thể chất F2</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="table2__semester2 ky-thuat-lap-trinh">
+            <td>2</td>
+            <td>IT1.103.3</td>
+            <td>Kỹ thuật lập trình</td>
+            <td>3</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+
+          <tr class="table2__semester2 kinh-te-chinh-tri-mac-lenin">
+            <td>4</td>
+            <td>PS0.002.2</td>
+            <td>Kinh tế chính trị Mác- Lênin</td>
+            <td>2</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+
+          <tr class="table2__semester2 giao-duc-quoc-phong-an-ninh-3">
+            <td>7</td>
+            <td>DE0.003.1</td>
+            <td>Giáo dục quốc phòng- an ninh 3</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+
+          <tr class="table2__semester2 giao-duc-quoc-phong-an-ninh-4">
+            <td>9</td>
+            <td>DE0.004.2</td>
+            <td>Giáo dục quốc phòng- an ninh 4</td>
+            <td>2</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="table2__semester2 xac-suat-thong-ke">
+            <td>10</td>
+            <td>BS0.105.3</td>
+            <td>Xác suất thống kê</td>
+            <td>3</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="table2__semester2 chu-nghia-xa-hoi-khoa-hoc">
+            <td>11</td>
+            <td>PS0.003.2</td>
+            <td>Chủ nghĩa xã hội khoa học</td>
+            <td>2</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+
+          <tr class="table2__semester2 giao-duc-quoc-phong-an-ninh-2">
+            <td>14</td>
+            <td>DE0.002.2</td>
+            <td>Giáo dục quốc phòng- an ninh 2</td>
+            <td>2</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+
           <tr class="table2__semester2 giai-tich-2">
             <td>16</td>
             <td>BS0.002.2</td>
@@ -474,27 +492,13 @@
             <td>1</td>
             <td>1</td>
             <td>0</td>
-            <td>DAT</td>
             <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr class="table2__semester1 giao-duc-the-chat-f1">
-            <td>17</td>
-            <td>PE0.001.1</td>
-            <td>Giáo dục thể chất F1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>DAT</td>
             <td></td>
             <td></td>
             <td></td>
             <td></td>
           </tr>
+
           <tr class="table2__semester2 giao-duc-quoc-phong-an-ninh-1">
             <td>18</td>
             <td>DE0.001.3</td>
@@ -504,17 +508,13 @@
             <td>1</td>
             <td>1</td>
             <td>1</td>
-            <td>DAT</td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
             <td></td>
           </tr>
         </table>
-      </div>
-
-      <div id="btn-edit">
-        <button onclick="editScores();">EDIT SCODES</button>
       </div>
 
       <div class="footer">
@@ -525,10 +525,10 @@
         <div class="footer__nav">
           <ul class="footer__list">
             <li class="footer__item">
-              <a href="#" class="footer__link">Trang chủ</a>
+              <a href="index.html" class="footer__link">Trang chủ</a>
             </li>
             <li class="footer__item">
-              <a href="#" class="footer__link">Thoát</a>
+              <a href="index.html" class="footer__link">Thoát</a>
             </li>
             <li class="footer__item">
               <a href="#" class="footer__link">Hỏi đáp</a>
@@ -565,7 +565,6 @@
       </div>
     </div>
   </body>
+  <script src="js/fomatTranscript.js"></script>
   <script src="js/transcript.js"></script>
-  <script src="js/userlogin.js"></script>
-  <script src="js/usersignup.js"></script>
 </html>

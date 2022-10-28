@@ -22,6 +22,10 @@ body{
     font-family: sans-serif;
 }
 
+
+
+
+
 /* header */
 .header{
     width: 80%;
@@ -60,6 +64,9 @@ body{
     display: none;
     font-size: 1.4rem;
 }
+
+
+
 
 /* header logo */
 .header__logo{
@@ -110,6 +117,11 @@ body{
 .header__search-icon:hover{
     opacity: 0.8;
 }
+
+
+
+
+
 
 /* header navbar */
 .header__nav{
@@ -178,8 +190,6 @@ body{
     height: 500px;
     animation: slideLeft 40s linear infinite;
 }
-
-
 @keyframes slideLeft {
 
     0%{
@@ -295,6 +305,10 @@ body{
 }
 
 
+
+
+
+
 /* body news */
 .body__the-news-ctn{
     padding: 10px;
@@ -398,6 +412,7 @@ body{
     border-radius: 10px;
     color: var(--text-color);
     width: 400px;
+    max-width: 100%;
     margin: 50px auto auto auto;
     background-color: var(--background-color);
     padding: 30px 70px;
@@ -510,6 +525,11 @@ body{
 .focus{
     transform: translateY(-20px);
 }
+
+
+
+
+
 
 /* sign up */
 #sign-up{
@@ -643,4 +663,28 @@ body{
     margin: 0 3px;
     font-size: 1.4rem;
     display: none;
+}
+
+
+
+
+
+
+/* responsive */
+
+/* máy tính */
+@media(min-width:1024px){
+
+}
+
+
+/* máy tính bảng */
+ @media (max-width:1023px) and (min-width:740px){
+
+ }
+
+
+/* điện thoại */
+ @media (max-width:739px){ 
+
 }

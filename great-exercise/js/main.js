@@ -1,6 +1,41 @@
-if (localStorage.getItem('students') == null) {
-    localStorage.setItem('students', '');
-    localStorage.setItem('now', 'null');
+if (localStorage.getItem('isClear') == null) {
+    localStorage.clear();
+    localStorage.setItem('isClear', '1');
+}
+
+if (localStorage.getItem('teachers') == null) {
+    localStorage.setItem('teachers', '');
+    localStorage.setItem('now', '0');
+}
+
+if (localStorage.getItem('bayGioLa') == 'Giáo Viên') {
+    var teachers = JSON.parse(localStorage.getItem("teachers"));
+    var now = JSON.parse(localStorage.getItem('now'));
+    var sinhVienThu = JSON.parse(localStorage.getItem('sinhVienThu'));
+    document.querySelector('#btn-sign-in').style.display = 'none';
+    document.querySelector('#btn-sign-up').style.display = 'none';
+    document.querySelector('#hello-user').style.display = 'block';
+    document.querySelector('#hello-user').innerText = 'Xin chào: ' + (teachers[now].name ? teachers[now].name : '');
+    document.querySelector('#log-out-btn').style.display = 'block';
+    document.querySelector('#editScores-teacher').style.display = 'block';
+    document.querySelector('#showScores').style.display = 'block';
+}
+if (localStorage.getItem('bayGioLa') == 'Sinh Viên') {
+    var teachers = JSON.parse(localStorage.getItem("teachers"));
+    var now = JSON.parse(localStorage.getItem('now'));
+    var sinhVienThu = JSON.parse(localStorage.getItem('sinhVienThu'));
+    document.querySelector('#btn-sign-in').style.display = 'none';
+    document.querySelector('#btn-sign-up').style.display = 'none';
+    document.querySelector('#hello-user').style.display = 'block';
+    document.querySelector('#hello-user').innerText = 'Xin chào: ' + (teachers[now].students[sinhVienThu].name?teachers[now].students[sinhVienThu].name:'');
+    document.querySelector('#log-out-btn').style.display = 'block';
+    document.querySelector('#showScores').style.display = 'block';
+}
+if (localStorage.getItem('bayGioLa') == '') {
+    document.querySelector('#btn-sign-in').style.display = 'block';
+    document.querySelector('#btn-sign-up').style.display = 'block';
+    document.querySelector('#hello-user').style.display = 'none';
+    document.querySelector('#log-out-btn').style.display = 'none';
 }
 
 var loginPage = document.getElementById('login');
@@ -50,24 +85,9 @@ var helloUser = document.querySelector("#hello-user");
 var students = localStorage.getItem("students") ? JSON.parse(localStorage.getItem('students')) : [];
 
 
-    
-if (now != 'null') {
-    now = parseInt(now);
-    btnSignUp.style.display = "none";
-    btnSignIn.style.display = 'none'
-    helloUser.style.display = 'block';
-    var temp = students[now].name == "" ? '---' : students[now].name;
-    helloUser.innerText = `Xin chào: ${temp} `;
-    btnLogOut.style.display = 'block';
-} else {
-    btnSignUp.style.display = "block";
-    btnSignIn.style.display = 'block'
-    helloUser.style.display = 'none';
-    btnLogOut.style.display = "none";
-}
 
 function logOut() {
-    localStorage.setItem("now", 'null');
+    localStorage.setItem('bayGioLa', '');
     location.reload();
 }
 

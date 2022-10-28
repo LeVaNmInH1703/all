@@ -33,7 +33,7 @@
               >
                 ĐĂNG NHẬP
               </button>
-              <div id="hello-user">Xin chào</div>
+              <div id="hello-user"></div>
             </li>
             <li class="header__info-item">
               <button
@@ -85,17 +85,19 @@
             </li>
             <li class="header__nav-item">
               <a
-                href="javascript:void(0);"
+                href="transcript.html"
                 class="header__nav-link"
-                onclick="checkLogin(true);"
+                id="showScores"
+                style="display: none"
                 >XEM ĐIỂM</a
               >
             </li>
             <li class="header__nav-item">
               <a
-                href="javascript:void(0);"
+                href="listStudents.html"
                 class="header__nav-link"
-                onclick="checkLogin(false);"
+                id="editScores-teacher"
+                style="display: none"
                 >SỬA ĐIỂM</a
               >
             </li>
@@ -209,6 +211,7 @@
       <div class="body">
         <div class="body__big-img-ctn">
           <div class="body__big-img"></div>
+
           <div class="body__introduce">
             <h1 class="body__introduce-title">GIỚI THIỆU</h1>
             <p class="body__introduce-para">Nhóm 6</p>

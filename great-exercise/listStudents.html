@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="fontawesome-free/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <!-- BS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./css/app.css" />
+    <title>.: Danh Sách Sinh Viên :.</title>
+    <link rel="icon" href="images/logo-big.png" />
+  </head>
+
+  <body>
+    <div class="status">
+      <div class="status-content">
+        <div class="status-primary">
+          <p>
+            <i class="fas fa-users"></i>
+          </p>
+          <h3></h3>
+          <p>Tổng sinh viên</p>
+        </div>
+      </div>
+      <div class="status-content">
+        <div class="status-warning">
+          <p>
+            <i class="fas fa-spinner"></i>
+          </p>
+          <h3></h3>
+          <p>Tạm ngừng học</p>
+        </div>
+      </div>
+      <div class="status-content">
+        <div class="status-success">
+          <p>
+            <i class="fa-solid fa-exclamation fa"></i>
+          </p>
+          <h3></h3>
+          <p>Nợ Môn</p>
+        </div>
+      </div>
+      <div class="status-content">
+        <div class="status-danger">
+          <p>
+            <i class="fas fa-bug"></i>
+          </p>
+          <h3></h3>
+          <p>Cảnh cáo</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-teacher">
+      <input type="text" placeholder="Tên" id="teacher-name" />
+      <input type="text" placeholder="Tên đăng nhập" id="teacher-username" />
+      <input type="password" placeholder="Mật khẩu" id="teacher-password" />
+      <label for="show-password">hiện mật khẩu</label>
+      <input type="checkbox" id="show-password" />
+      <input type="submit" id="save-teacher" onclick="saveTeacher();" />
+    </div>
+
+    <div class="table-container">
+      <div class="card">
+        <div class="card-header">
+          <h4>Top sinh viên năm học 2021-2022</h4>
+          <i class="fas fa-ellipsis-h"></i>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Họ và tên</th>
+              <th>Điểm trung bình</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h4>Điểm trung bình</h4>
+          <i class="fas fa-ellipsis-h"></i>
+        </div>
+        <div class="card-content">
+          <div class="progress-wrapper">
+            <p>
+              Từ 3,60 đến 4,00;
+              <span class="float-right" id="diem-xs"></span>
+            </p>
+            <div class="progress">
+              <div class="bg-success"></div>
+            </div>
+          </div>
+          <div class="progress-wrapper">
+            <p>
+              Từ 3,20 đến 3,59
+              <span class="float-right" id="diem-kha"></span>
+            </p>
+            <div class="progress">
+              <div class="bg-primary"></div>
+            </div>
+          </div>
+          <div class="progress-wrapper">
+            <p>
+              Từ 2,50 đến 3,19
+              <span class="float-right" id="diem-tb"></span>
+            </p>
+            <div class="progress">
+              <div class="bg-warning"></div>
+            </div>
+          </div>
+          <div class="progress-wrapper">
+            <p>
+              dưới 2,5
+              <span class="float-right" id="diem-yeu"></span>
+            </p>
+            <div class="progress">
+              <div class="bg-danger"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- TABLE -->
+    <h4>Danh sách sinh viên</h4>
+    <div class="select-container">
+      <select class="form-select" aria-label="Default select example">
+        <option selected>Năm Học</option>
+        <option value="2">2021-2022</option>
+      </select>
+      <select class="form-select" aria-label="Default select example">
+        <option selected>Khóa</option>
+        <option value="1">K62</option>
+      </select>
+      <select class="form-select" aria-label="Default select example">
+        <option selected>Chuyên Ngành</option>
+        <option value="1">Công Nghệ Thông Tin</option>
+      </select>
+      <select class="form-select" aria-label="Default select example">
+        <option selected>Trạng thái</option>
+        <option value="1">Cảnh cáo lần 1</option>
+        <option value="2">Cảnh cáo lần 2</option>
+        <option value="3">Ngừng học</option>
+      </select>
+      <select class="form-select" aria-label="Default select example">
+        <option selected>Hệ Đào Tạo</option>
+        <option value="1">Chính quy</option>
+      </select>
+    </div>
+    <div class="search">
+      <div class="input-group">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Nhập tên sinh viên"
+        />
+      </div>
+
+      <button type="button" class="btn btn-primary">Tìm Kiếm</button>
+      <input type="checkbox" id="themSinhVien" style="display: none" />
+      <label for="themSinhVien" type="button" class="btn btn-primary">
+        Thêm Sinh Viên
+      </label>
+      <button type="button" class="btn btn-danger">Xóa bộ lọc</button>
+    </div>
+
+    <div id="createStudent" style="display: none">
+      <input type="text" placeholder="Họ và Tên" id="full-name" />
+      <input type="text" placeholder="Tên đăng nhập" id="user-name" /><br />
+      <input type="password" placeholder="Mật khẩu" id="password" /><br />
+      <input
+        type="password"
+        placeholder="Nhập lại mật khẩu"
+        id="confirm-password"
+      />
+      <div class="score">
+        <table>
+          <tr>
+            <th>Tên Môn Học</th>
+            <th>DQT</th>
+            <th>THI</th>
+          </tr>
+          <tr>
+            <td>GDTC F1</td>
+            <td><input type="text" /></td>
+            <td><input type="text" /></td>
+          </tr>
+          <tr>
+            <td>Giải Tích 1</td>
+            <td><input type="text" /></td>
+            <td><input type="text" /></td>
+          </tr>
+          <tr>
+            <td>Nhập Môn</td>
+            <td><input type="text" /></td>
+            <td><input type="text" /></td>
+          </tr>
+          <tr>
+            <td>Triết</td>
+            <td><input type="text" /></td>
+            <td><input type="text" /></td>
+          </tr>
+          <tr>
+            <td>Tin Đại Cương</td>
+            <td><input type="text" /></td>
+            <td><input type="text" /></td>
+          </tr>
+          <tr>
+            <td>Bảo Trì Hệ Thống</td>
+            <td><input type="text" /></td>
+            <td><input type="text" /></td>
+          </tr>
+          <tr>
+            <td>Đại Số Tuyến Tính</td>
+            <td><input type="text" /></td>
+            <td><input type="text" /></td>
+          </tr>
+          <tr>
+            <td>Vật Lý</td>
+            <td><input type="text" /></td>
+            <td><input type="text" /></td>
+          </tr>
+          <tr>
+            <td>GDTC F2</td>
+            <td><input type="text" /></td>
+            <td><input type="text" /></td>
+          </tr>
+          <tr>
+            <td>Kĩ Thuật Lập Trình</td>
+            <td><input type="text" /></td>
+            <td><input type="text" /></td>
+          </tr>
+          <tr>
+            <td>Kinh Tế Chính Trị</td>
+            <td><input type="text" /></td>
+            <td><input type="text" /></td>
+          </tr>
+          <tr>
+            <td>QPAN 3</td>
+            <td><input type="text" /></td>
+            <td><input type="text" /></td>
+          </tr>
+          <tr>
+            <td>QPAN 4</td>
+            <td><input type="text" /></td>
+            <td><input type="text" /></td>
+          </tr>
+          <tr>
+            <td>Xác Suất Thống Kê</td>
+            <td><input type="text" /></td>
+            <td><input type="text" /></td>
+          </tr>
+          <tr>
+            <td>Chủ Nghĩa Xã Hội</td>
+            <td><input type="text" /></td>
+            <td><input type="text" /></td>
+          </tr>
+          <tr>
+            <td>QPAN 2</td>
+            <td><input type="text" /></td>
+            <td><input type="text" /></td>
+          </tr>
+          <tr>
+            <td>Giải Tích 2</td>
+            <td><input type="text" /></td>
+            <td><input type="text" /></td>
+          </tr>
+          <tr>
+            <td>QPAN 1</td>
+            <td><input type="text" /></td>
+            <td><input type="text" /></td>
+          </tr>
+        </table>
+        <input type="submit" value="CREATE" onclick="createStudent();" />
+        <input type="reset" value="RESET" onclick="location.reload();" />
+      </div>
+    </div>
+
+    <div class="list-student">
+      <table class="table table-striped table-hover">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Họ và tên</th>
+            <th scope="col">Tên Đăng Nhập</th>
+            <th scope="col">Mật Khẩu</th>
+            <th scope="col">Thông tin</th>
+          </tr>
+        </thead>
+        <tbody class="list-student-tbody"></tbody>
+      </table>
+    </div>
+  </body>
+
+  <script src="js/usersignup.js"></script>
+  <script src="js/handleEditStudent.js"></script>
+</html>

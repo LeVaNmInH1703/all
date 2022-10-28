@@ -13,12 +13,15 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <style>
+      #btn-save {
+        margin-top: 10px;
+        text-align: center;
+      }
+    </style>
   </head>
-  <body
-    id="input"
-    onload="alert('Lưu ý: thang điểm từ 0->10 ngoài khoảng này được tính là 0 điểm');"
-  >
-    <div class="container" onload="editScores();">
+  <body id="input">
+    <div class="container">
       <div class="header">
         <h1 class="header__title">HỆ THỐNG THÔNG TIN TRƯỜNG ĐẠI HỌC</h1>
         <div class="header__user">
@@ -33,18 +36,12 @@
       <div class="nav">
         <ul class="nav__list">
           <li class="nav__list-item">
-            <a
-              class="nav__list-link"
-              onclick="acceptLeave();"
-              href="javacsript:void(0);"
+            <a class="nav__list-link" onclick="acceptLeave(0);" href="#"
               >Trang chủ</a
             >
           </li>
           <li class="nav__list-item">
-            <a
-              class="nav__list-link"
-              onclick="acceptLeave();"
-              href="javacsript:void(0);"
+            <a class="nav__list-link" onclick="acceptLeave(1);" href="#"
               >Thoát</a
             >
           </li>
@@ -63,10 +60,7 @@
       </div>
 
       <div class="house">
-        <a
-          onclick="acceptLeave();"
-          href="javacsript:void(0);"
-          class="house__link"
+        <a onclick="acceptLeave(0);" href="#" class="house__link"
           ><i class="fa fa-thin fa-house house__icon"></i
         ></a>
         <i class="fa fa-thin fa-arrow-right house__icon"></i>
@@ -77,17 +71,7 @@
         <div class="form__ctn">
           <div class="form__row1">
             <div class="title form__row1">Mã sinh viên:</div>
-            <div class="data form__row1">
-              <input
-                type="text"
-                id="user-msv"
-                style="width: 150px"
-                onchange="changeMsv();"
-                placeholder="mã sinh viên"
-                tabindex="1"
-                autofocus
-              />
-            </div>
+            <div class="data form__row1" id="user-msv"></div>
 
             <div class="title form__row1">Họ tên:</div>
             <div class="data form__row1">
@@ -191,48 +175,15 @@
           <tr>
             <td class="year">2021_2022</td>
             <td class="semester">1</td>
-            <td class="ip-tbtl10n1">
-              <input
-                type="text"
-                style="width: 90%; font-size: 1.2rem"
-                class="input-tbtl10n1"
-                placeholder="nhập điểm"
-                tabindex="1"
-              />
-            </td>
+            <td class="tbtl10n1"></td>
             <td class="tbtl10n2"></td>
-            <td class="ip-tbtl4n1">
-              <input
-                type="text"
-                style="width: 90%; font-size: 1.2rem"
-                class="input-tbtl4n1"
-                placeholder="nhập điểm"
-                tabindex="2"
-                ;
-              />
-            </td>
+            <td class="tbtl4n1"></td>
             <td class="tbtl4n2"></td>
             <td class="tctln1">18</td>
             <td class="tctln2"></td>
-            <td class="ip-tbc10n1">
-              <input
-                type="text"
-                style="width: 90%; font-size: 1.2rem"
-                class="input-tbc10n1"
-                placeholder="nhập điểm"
-                tabindex="3"
-              />
-            </td>
+            <td class="tbc10n1"></td>
             <td class="tbc10n2"></td>
-            <td class="ip-tbc4n1">
-              <input
-                type="text"
-                style="width: 90%; font-size: 1.2rem"
-                class="input-tbc4n1"
-                placeholder="nhập điểm"
-                tabindex="4"
-              />
-            </td>
+            <td class="tbc4n1"></td>
             <td class="tbc4n2"></td>
             <td class="tcn1">18</td>
             <td class="tcn2"></td>
@@ -240,47 +191,15 @@
           <tr class="table-row-c">
             <td class="year">2021_2022</td>
             <td class="semester">2</td>
-            <td class="ip-tbtl10n1">
-              <input
-                type="text"
-                style="width: 90%; font-size: 1.2rem"
-                class="input-tbtl10n1"
-                placeholder="nhập điểm"
-                tabindex="1"
-              />
-            </td>
+            <td class="tbtl10n1"></td>
             <td class="tbtl10n2"></td>
-            <td class="ip-tbtl4n1">
-              <input
-                type="text"
-                style="width: 90%; font-size: 1.2rem"
-                class="input-tbtl4n1"
-                placeholder="nhập điểm"
-                tabindex="2"
-              />
-            </td>
+            <td class="tbtl4n1"></td>
             <td class="tbtl4n2"></td>
             <td class="tctln1">12</td>
             <td class="tctln2"></td>
-            <td class="ip-tbc10n1">
-              <input
-                type="text"
-                style="width: 90%; font-size: 1.2rem"
-                class="input-tbc10n1"
-                placeholder="nhập điểm"
-                tabindex="3"
-              />
-            </td>
+            <td class="tbc10n1"></td>
             <td class="tbc10n2"></td>
-            <td class="ip-tbc4n1">
-              <input
-                type="text"
-                style="width: 90%; font-size: 1.2rem"
-                class="input-tbc4n1"
-                placeholder="nhập điểm"
-                tabindex="4"
-              />
-            </td>
+            <td class="tbc4n1"></td>
             <td class="tbc4n2"></td>
             <td class="tcn1">12</td>
             <td class="tcn2"></td>
@@ -288,15 +207,15 @@
           <tr>
             <td class="year">2021_2022</td>
             <td class="semester">Cả năm</td>
-            <td class="tbtl10n1">---</td>
+            <td class="tbtl10n1"></td>
             <td class="tbtl10n2"></td>
-            <td class="tbtl4n1">---</td>
+            <td class="tbtl4n1"></td>
             <td class="tbtl4n2"></td>
             <td class="tctln1">30</td>
             <td class="tctln2"></td>
-            <td class="tbc10n1">---</td>
+            <td class="tbc10n1"></td>
             <td class="tbc10n2"></td>
-            <td class="tbc4n1">---</td>
+            <td class="tbc4n1"></td>
             <td class="tbc4n2"></td>
             <td class="tcn1">30</td>
             <td class="tcn2"></td>
@@ -304,15 +223,15 @@
           <tr class="table-row-c">
             <td class="year">Toàn khóa</td>
             <td class="semester"></td>
-            <td class="tbtl10n1">---</td>
+            <td class="tbtl10n1"></td>
             <td class="tbtl10n2"></td>
-            <td class="tbtl4n1">---</td>
+            <td class="tbtl4n1"></td>
             <td class="tbtl4n2"></td>
             <td class="tctln1">30</td>
             <td class="tctln2"></td>
-            <td class="tbc10n1">---</td>
+            <td class="tbc10n1"></td>
             <td class="tbc10n2"></td>
-            <td class="tbc4n1">---</td>
+            <td class="tbc4n1"></td>
             <td class="tbc4n2"></td>
             <td class="tcn1">30</td>
             <td class="tcn2"></td>
@@ -877,18 +796,12 @@
         <div class="footer__nav">
           <ul class="footer__list">
             <li class="footer__item">
-              <a
-                onclick="acceptLeave();"
-                href="javacsript:void(0);"
-                class="footer__link"
+              <a onclick="acceptLeave(0);" href="#" class="footer__link"
                 >Trang chủ</a
               >
             </li>
             <li class="footer__item">
-              <a
-                onclick="acceptLeave();"
-                href="javacsript:void(0);"
-                class="footer__link"
+              <a onclick="acceptLeave(1);" href="#" class="footer__link"
                 >Thoát</a
               >
             </li>
@@ -927,6 +840,6 @@
       </div>
     </div>
   </body>
-  <script src="js/transcript.js"></script>
-  <script src="js/usersignup.js"></script>
+  <script src="js/fomatTranscript.js"></script>
+  <script src="js/inputScore.js"></script>
 </html>
