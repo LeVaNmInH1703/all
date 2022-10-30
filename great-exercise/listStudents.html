@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <link
       rel="stylesheet"
       type="text/css"
@@ -27,6 +26,7 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="./css/app.css" />
+
     <title>.: Danh Sách Sinh Viên :.</title>
     <link rel="icon" href="images/logo-big.png" />
   </head>
@@ -71,20 +71,20 @@
       </div>
     </div>
 
-    <div class="info-teacher">
-      <input type="text" placeholder="Tên" id="teacher-name" />
-      <input type="text" placeholder="Tên đăng nhập" id="teacher-username" />
-      <input type="password" placeholder="Mật khẩu" id="teacher-password" />
-      <label for="show-password">hiện mật khẩu</label>
-      <input type="checkbox" id="show-password" />
-      <input type="submit" id="save-teacher" onclick="saveTeacher();" />
-    </div>
+    <button
+      type="button"
+      class="btn btn-primary"
+      onclick="location.href='./index.html'"
+      style="margin-bottom: 10px"
+      title="trở về trang chủ"
+    >
+      Trang chủ
+    </button>
 
     <div class="table-container">
       <div class="card">
         <div class="card-header">
           <h4>Top sinh viên năm học 2021-2022</h4>
-          <i class="fas fa-ellipsis-h"></i>
         </div>
         <table>
           <thead>
@@ -100,7 +100,6 @@
       <div class="card">
         <div class="card-header">
           <h4>Điểm trung bình</h4>
-          <i class="fas fa-ellipsis-h"></i>
         </div>
         <div class="card-content">
           <div class="progress-wrapper">
@@ -146,26 +145,17 @@
     <h4>Danh sách sinh viên</h4>
     <div class="select-container">
       <select class="form-select" aria-label="Default select example">
-        <option selected>Năm Học</option>
-        <option value="2">2021-2022</option>
-      </select>
-      <select class="form-select" aria-label="Default select example">
         <option selected>Khóa</option>
-        <option value="1">K62</option>
+        <option value="62">K62</option>
+        <option value="61">K61</option>
       </select>
       <select class="form-select" aria-label="Default select example">
         <option selected>Chuyên Ngành</option>
         <option value="1">Công Nghệ Thông Tin</option>
       </select>
       <select class="form-select" aria-label="Default select example">
-        <option selected>Trạng thái</option>
-        <option value="1">Cảnh cáo lần 1</option>
-        <option value="2">Cảnh cáo lần 2</option>
-        <option value="3">Ngừng học</option>
-      </select>
-      <select class="form-select" aria-label="Default select example">
-        <option selected>Hệ Đào Tạo</option>
-        <option value="1">Chính quy</option>
+        <option selected>Khoa</option>
+        <option value="1">Công nghệ thông tin</option>
       </select>
     </div>
     <div class="search">
@@ -182,18 +172,36 @@
       <label for="themSinhVien" type="button" class="btn btn-primary">
         Thêm Sinh Viên
       </label>
-      <button type="button" class="btn btn-danger">Xóa bộ lọc</button>
     </div>
 
     <div id="createStudent" style="display: none">
-      <input type="text" placeholder="Họ và Tên" id="full-name" />
-      <input type="text" placeholder="Tên đăng nhập" id="user-name" /><br />
-      <input type="password" placeholder="Mật khẩu" id="password" /><br />
-      <input
-        type="password"
-        placeholder="Nhập lại mật khẩu"
-        id="confirm-password"
-      />
+      <div class="info-student">
+        <input
+          type="text"
+          placeholder="Họ và Tên"
+          id="full-name"
+          class="form-control"
+        />
+        <input
+          type="text"
+          placeholder="Tên đăng nhập"
+          id="user-name"
+          class="form-control"
+        />
+        <input
+          type="password"
+          placeholder="Mật khẩu"
+          id="password"
+          class="form-control"
+        />
+        <input
+          type="password"
+          placeholder="Nhập lại mật khẩu"
+          id="confirm-password"
+          class="form-control"
+        />
+      </div>
+
       <div class="score">
         <table>
           <tr>
@@ -292,8 +300,18 @@
             <td><input type="text" /></td>
           </tr>
         </table>
-        <input type="submit" value="CREATE" onclick="createStudent();" />
-        <input type="reset" value="RESET" onclick="location.reload();" />
+        <input
+          type="submit"
+          value="CREATE"
+          onclick="createStudent();"
+          class="btn btn-primary btn-sm"
+        />
+        <input
+          type="reset"
+          value="RESET"
+          onclick="location.reload();"
+          class="btn btn-secondary btn-sm"
+        />
       </div>
     </div>
 

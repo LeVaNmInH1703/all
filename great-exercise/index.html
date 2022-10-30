@@ -4,8 +4,10 @@
     <meta charset="utf-8" />
     <title>Hệ thống quản lý điểm đại học</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/basic.css" />
     <link rel="icon" href="images/logo-big.png" />
     <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/changePassword.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
@@ -15,15 +17,78 @@
     />
   </head>
   <body>
+    <div id="change-password">
+      <div class="change-password-ctn">
+        <i
+          class="fa-regular close fa-x"
+          onclick="Closecpw('change-password');"
+        ></i>
+        <img src="images/user.png" alt="" class="change-password__img" />
+        <div class="change-password__account">
+          <label for="change-password__password">Mật khẩu hiện tại</label>
+          <input type="password" id="change-password__password" /><br />
+          <div
+            id="change-password__password-null"
+            style="color: red; display: none"
+          >
+            <i
+              class="fa-solid fa-circle-xmark"
+              title="mật khẩu hiện tại không chính xác"
+            ></i>
+          </div>
+
+          <label for="change-password-new__password">Mật khẩu mới</label>
+          <input type="password" id="change-password-new__password" /><br />
+          <div
+            id="change-password-new__password-null"
+            style="color: red; display: none"
+          >
+            <i
+              class="fa-solid fa-circle-xmark"
+              title="chưa nhập mật khẩu mới"
+            ></i>
+          </div>
+
+          <label for="change-password__confirm-password"
+            >Nhập lại mật khẩu mới</label
+          >
+          <input type="password" id="change-password__confirm-password" />
+          <div
+            id="change-password-new__confirm-password-null"
+            style="color: red; display: none"
+          >
+            <i
+              class="fa-solid fa-circle-xmark"
+              title="chưa xác minh mật khẩu mới"
+            ></i>
+          </div>
+          <div
+            id="change-password-new__confirm-password-false"
+            style="color: red; display: none"
+          >
+            <i
+              class="fa-solid fa-circle-xmark"
+              title="xác minh mật khẩu mới thất bại"
+            ></i>
+          </div>
+          <button onclick="showPassword();" id="showPassword">
+            Hiện mật khẩu
+          </button>
+        </div>
+        <button class="change-password__btn" onclick="changePassword();">
+          Đổi
+        </button>
+      </div>
+    </div>
     <div class="container">
       <div class="header">
         <div class="header__info">
           <ul class="header__info-list">
             <li class="header__info-item">
-              <a href="" class="header__info-link">SƠ ĐỒ WEB</a>
+              <a href="#" class="header__info-link">SƠ ĐỒ WEB</a>
             </li>
             <li class="header__info-item">
-              <a href="" class="header__info-link">LIÊN HỆ</a>
+              <a href="#" class="header__info-link">LIÊN HỆ</a>
             </li>
             <li class="header__info-item">
               <button
@@ -46,6 +111,15 @@
               <div id="log-out-btn" class="log-out-btn" onclick="logOut();">
                 Đăng Xuất
               </div>
+            </li>
+            <li class="header__info-item" id="changePassword-btn">
+              <a
+                href="#"
+                onclick="document.getElementById('change-password').style.display='block'"
+                class="header__info-link"
+              >
+                Đổi mật khẩu?
+              </a>
             </li>
           </ul>
         </div>
@@ -84,11 +158,7 @@
               <a href="" class="header__nav-link">TIN TỨC</a>
             </li>
             <li class="header__nav-item">
-              <a
-                href="transcript.html"
-                class="header__nav-link"
-                id="showScores"
-                style="display: none"
+              <a href="transcript.html" class="header__nav-link" id="showScores"
                 >XEM ĐIỂM</a
               >
             </li>
@@ -97,7 +167,6 @@
                 href="listStudents.html"
                 class="header__nav-link"
                 id="editScores-teacher"
-                style="display: none"
                 >SỬA ĐIỂM</a
               >
             </li>
@@ -111,7 +180,7 @@
 
           <img src="images/user.png" alt="" class="login__img" />
           <div class="login__account">
-            <label for="username">User name</label>
+            <label for="login__username">Tên đăng nhập</label>
             <input type="text" id="login__username" />
             <div id="login__username-null" style="color: red; display: none">
               <i
@@ -120,7 +189,7 @@
               ></i>
             </div>
             <br />
-            <label for="passwword">Pass word</label>
+            <label for="login__password">Mật khẩu</label>
             <input type="password" id="login__password" />
             <div id="login__password-null" style="color: red; display: none">
               <i
@@ -135,17 +204,17 @@
             <label for="remember">remember me</label>
           </div>
           <button class="login__btn" type="submit" onclick="login(); ">
-            Login
+            Đăng nhập
           </button>
-          <button class="login__forgot-password">Forgot password?</button>
+          <button class="login__forgot-password">Quên mật khẩu?</button>
           <div class="login__sign-up">
-            You don't have account
+            Bạn chưa có tài khoản?
             <button
               class="login__sign-up-link"
               onclick="document.getElementById('sign-up').style.display='block';
-            Close('login')"
+              Close('login')"
             >
-              Sign up
+              Đăng kí
             </button>
           </div>
         </div>
@@ -156,7 +225,7 @@
           <i class="fa-regular close fa-x" onclick="Close('sign-up');"></i>
           <img src="images/user.png" alt="" class="sign-up__img" />
           <div class="sign-up__account">
-            <label for="">User name</label>
+            <label for="sign-up__username">Tên đăng nhập</label>
             <input type="text" id="sign-up__username" /><br />
             <div id="sign-up__username-null" style="color: red; display: none">
               <i
@@ -164,7 +233,7 @@
                 title="chưa nhập tên đăng nhập"
               ></i>
             </div>
-            <label for="">Pass word</label>
+            <label for="sign-up__password">Mật khẩu</label>
             <input type="password" id="sign-up__password" /><br />
             <div id="sign-up__password-null" style="color: red; display: none">
               <i
@@ -172,7 +241,7 @@
                 title="chưa nhập mật khẩu"
               ></i>
             </div>
-            <label for="">Confirm password</label>
+            <label for="sign-up__confirm-password">Nhập lại mật khẩu</label>
             <input type="password" id="sign-up__confirm-password" />
             <div
               id="sign-up__confirm-password-null"
@@ -193,16 +262,16 @@
               ></i>
             </div>
           </div>
-          <button class="sign-up__btn" onclick="signUp();">Sign up</button>
+          <button class="sign-up__btn" onclick="signUp();">Đăng kí</button>
 
           <div class="sign-up__login">
-            You have account
+            Bạn đã có tài khoản?
             <button
               class="sign-up__login-link"
               onclick="Close('sign-up');
               document.getElementById('login').style.display='block';"
             >
-              Login
+              Đăng nhập
             </button>
           </div>
         </div>
@@ -212,26 +281,25 @@
         <div class="body__big-img-ctn">
           <div class="body__big-img"></div>
 
-          <div class="body__introduce">
-            <h1 class="body__introduce-title">GIỚI THIỆU</h1>
-            <p class="body__introduce-para">Nhóm 6</p>
-            <div class="body__introduce-content">
-              <div class="body__introduce-info" id="info-designer1">
-                <div class="body__introduce-info-name">Lê Văn Minh</div>
-              </div>
-              <div class="body__introduce-info" id="info-designer2">
-                <div class="body__introduce-info-name">Lê Văn Minh</div>
-              </div>
-              <div class="body__introduce-info" id="info-designer3">
-                <div class="body__introduce-info-name">Lê Văn Minh</div>
-              </div>
-              <div class="body__introduce-info" id="info-designer4">
-                <div class="body__introduce-info-name">Lê Văn Minh</div>
-              </div>
-              <div class="body__introduce-info" id="info-designer5">
-                <div class="body__introduce-info-name">Lê Văn Minh</div>
-              </div>
-            </div>
+          <div class="body__introduct">
+            <h3>GIỚI THIỆU</h3>
+            <p>
+              Trường Đại Học GIAO THÔNG VẬN TẢI hướng tới đào tạo người học trở
+              thành công dân toàn cầu, có tinh thần dân tộc và trách nhiệm quốc
+              tế.
+            </p>
+            <br />
+            <p>
+              Nhà trường áp dụng phương pháp giáo dục tích cực, học đi đôi với
+              hành, kiến tạo môi trường giúp người học xây dựng và rèn luyện ý
+              thức tự học suốt đời, khả năng thích ứng với mọi hoàn cảnh nhằm
+              phát huy tốt nhất tiềm năng và khả năng sáng tạo.
+            </p>
+            <br />
+            <p>
+              Nhà trường xác định người học là trung tâm, người thầy truyền cảm
+              hứng.
+            </p>
           </div>
         </div>
 
@@ -311,7 +379,66 @@
         </div>
       </div>
 
+      <div class="content1">
+        <div class="content1__title">
+          <h1>SỨ MẠNG</h1>
+          <div class="content1__title-p">
+            <p>
+              Trường Đại học Giao thông vận tải có sứ mạng đào tạo, nghiên cứu
+              khoa học, chuyển giao công nghệ chất lượng cao theo xu thế hội
+              nhập, có trách nhiệm xã hội nhằm thúc đẩy sự phát triển bền vững
+              của ngành giao thông vận tải và đất nước.
+            </p>
+          </div>
+        </div>
+        <img src="images/content1.png" alt="" />
+      </div>
+
+      <div class="content2">
+        <img src="images/content2.jpg" alt="" />
+        <div class="content2__title">
+          <h1>TẦM NHÌN</h1>
+          <p>
+            Trở thành trường đại học đa ngành theo định hướng nghiên cứu, khẳng
+            định vị thế hàng đầu Việt Nam trong lĩnh vực giao thông vận tải, có
+            uy tín và chất lượng ngang tầm Châu Á.
+          </p>
+          <a href="https://utc.edu.vn/muc-tieu"
+            >Xem thêm
+            <i class="fas fa-angle-double-right"></i>
+          </a>
+        </div>
+        <div></div>
+      </div>
+
       <div class="footer">
+        <div class="footer__menbers">
+          <ul class="footer__menber">
+            <h4>Nhóm 6:</h4>
+            <li>Lê Văn Minh</li>
+            <li>Mai Xuân Tùng</li>
+            <li>Phạm Đức Phương</li>
+            <li>Phạm Quang Anh</li>
+            <li>Phan Quốc Uy</li>
+          </ul>
+          <ul class="footer__menber-link">
+            <h4>Liên Hệ</h4>
+            <li>Điện thoại: 0394657140</li>
+            <li>Gmail: lenhatminh1703@gmail.com</li>
+            <li>
+              Khác:
+              <a href="https://www.facebook.com/profile.php?id=100025208484011"
+                ><img src="images/logo-facebook.png" alt=""
+              /></a>
+              <a href="https://levanminh1703.github.io/all/"
+                ><i class="fa-solid fa-user"></i
+              ></a>
+              <a href="https://github.com/LeVaNmInH1703"
+                ><img src="images/logo-github.png" alt=""
+              /></a>
+            </li>
+          </ul>
+        </div>
         <h3>&#169; Bản Quyền Thuộc Về Nhóm 6</h3>
       </div>
     </div>
@@ -319,4 +446,5 @@
   <script src="js/main.js"></script>
   <script src="js/userlogin.js"></script>
   <script src="js/usersignup.js"></script>
+  <script src="js/changePassword.js"></script>
 </html>

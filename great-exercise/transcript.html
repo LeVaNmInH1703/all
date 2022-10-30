@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <title>.: Bảng điểm :.</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/basic.css" />
     <link rel="stylesheet" href="css/transcript.css" />
     <link rel="icon" href="images/logo.png" />
     <link
@@ -13,6 +14,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link rel="stylesheet" href="css/changePassword.css" />
   </head>
   <body>
     <div class="container">
@@ -160,13 +162,13 @@
             <td></td>
             <td></td>
             <td></td>
-            <td>18</td>
+            <td>19</td>
             <td></td>
             <td></td>
             <td></td>
             <td></td>
             <td></td>
-            <td>30</td>
+            <td>19</td>
             <td></td>
           </tr>
           <tr class="table-row-c">
@@ -176,13 +178,13 @@
             <td></td>
             <td></td>
             <td></td>
-            <td>12</td>
+            <td>21</td>
             <td></td>
             <td></td>
             <td></td>
             <td></td>
             <td></td>
-            <td>30</td>
+            <td>21</td>
             <td></td>
           </tr>
           <tr>
@@ -192,13 +194,13 @@
             <td></td>
             <td></td>
             <td></td>
-            <td>30</td>
+            <td>40</td>
             <td></td>
             <td></td>
             <td></td>
             <td></td>
             <td></td>
-            <td>30</td>
+            <td>40</td>
             <td></td>
           </tr>
           <tr class="table-row-c">
@@ -208,13 +210,13 @@
             <td></td>
             <td></td>
             <td></td>
-            <td>30</td>
+            <td>40</td>
             <td></td>
             <td></td>
             <td></td>
             <td></td>
             <td></td>
-            <td>30</td>
+            <td>40</td>
             <td></td>
           </tr>
         </table>
@@ -531,12 +533,81 @@
               <a href="index.html" class="footer__link">Thoát</a>
             </li>
             <li class="footer__item">
-              <a href="#" class="footer__link">Hỏi đáp</a>
+              <a
+                href="#"
+                class="footer__link"
+                onclick="document.getElementById('change-password').style.display='block'"
+                >Đổi mật khẩu</a
+              >
             </li>
             <li class="footer__item">
               <a href="#" class="footer__link">Trợ giúp</a>
             </li>
           </ul>
+        </div>
+      </div>
+
+      <div id="change-password">
+        <div class="change-password-ctn">
+          <i
+            class="fa-regular close fa-x"
+            onclick="Closecpw('change-password');"
+          ></i>
+          <img src="images/user.png" alt="" class="change-password__img" />
+          <div class="change-password__account">
+            <label for="change-password__password">Mật khẩu hiện tại</label>
+            <input type="password" id="change-password__password" /><br />
+            <div
+              id="change-password__password-null"
+              style="color: red; display: none"
+            >
+              <i
+                class="fa-solid fa-circle-xmark"
+                title="mật khẩu hiện tại không chính xác"
+              ></i>
+            </div>
+
+            <label for="change-password-new__password">Mật khẩu mới</label>
+            <input type="password" id="change-password-new__password" /><br />
+            <div
+              id="change-password-new__password-null"
+              style="color: red; display: none"
+            >
+              <i
+                class="fa-solid fa-circle-xmark"
+                title="chưa nhập mật khẩu mới"
+              ></i>
+            </div>
+
+            <label for="change-password__confirm-password"
+              >Nhập lại mật khẩu mới</label
+            >
+            <input type="password" id="change-password__confirm-password" />
+            <div
+              id="change-password-new__confirm-password-null"
+              style="color: red; display: none"
+            >
+              <i
+                class="fa-solid fa-circle-xmark"
+                title="chưa xác minh mật khẩu mới"
+              ></i>
+            </div>
+            <div
+              id="change-password-new__confirm-password-false"
+              style="color: red; display: none"
+            >
+              <i
+                class="fa-solid fa-circle-xmark"
+                title="xác minh mật khẩu mới thất bại"
+              ></i>
+            </div>
+            <button onclick="showPassword();" id="showPassword">
+              Hiện mật khẩu
+            </button>
+          </div>
+          <button class="change-password__btn" onclick="changePassword();">
+            Đổi
+          </button>
         </div>
       </div>
 
@@ -566,5 +637,7 @@
     </div>
   </body>
   <script src="js/fomatTranscript.js"></script>
+
   <script src="js/transcript.js"></script>
+  <script src="js/changePassword.js"></script>
 </html>

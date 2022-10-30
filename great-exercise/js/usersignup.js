@@ -74,7 +74,6 @@ function signUp() {
             };
             localStorage.setItem("now", JSON.stringify(teachers.length-1));
             localStorage.setItem('teachers', JSON.stringify(teachers));
-            console.log(teachers);
             location.href = './listStudents.html';
             
         }
@@ -125,52 +124,54 @@ if (teachers.length > 0) {
 
     var soSv = now.students.length;
 
+
+    if(document.querySelector('.status-primary h3'))
+        document.querySelector('.status-primary h3').innerText = `${soSv}`;
+    // điểm tổng kết cả năm he 4 nhỏ hơn 1 
+    var soSvTamNgungHoc = 0;
+    for (var i = 0; i < soSv;i++){
+        if (now.students[i].scoresTb1[6] < 1)
+            soSvTamNgungHoc++;
+    };
+    if(document.querySelector('.status-warning h3'))
+        document.querySelector('.status-warning h3').innerText = `${soSvTamNgungHoc}`;
+    // điểm kthp nhỏ hơn 4
+    var soSvNoMon = 0;
+    for (var i = 0; i < soSv;i++){
+        if (now.students[i].scoresTb2[2] < 4 ||
+            now.students[i].scoresTb2[5] < 4 ||
+            now.students[i].scoresTb2[8] < 4 ||
+            now.students[i].scoresTb2[11] < 4 ||
+            now.students[i].scoresTb2[14] < 4 ||
+            now.students[i].scoresTb2[17] < 4 ||
+            now.students[i].scoresTb2[20] < 4 ||
+            now.students[i].scoresTb2[23] < 4 ||
+            now.students[i].scoresTb2[26] < 4 ||
+            now.students[i].scoresTb2[29] < 4 ||
+            now.students[i].scoresTb2[32] < 4 ||
+            now.students[i].scoresTb2[35] < 4 ||
+            now.students[i].scoresTb2[38] < 4 ||
+            now.students[i].scoresTb2[41] < 4 ||
+            now.students[i].scoresTb2[44] < 4 ||
+            now.students[i].scoresTb2[47] < 4 ||
+            now.students[i].scoresTb2[50] < 4 ||
+            now.students[i].scoresTb2[53] < 4
+            )
+            soSvNoMon++;
+    };
+    if(document.querySelector('.status-success h3'))
+        document.querySelector('.status-success h3').innerText = `${soSvNoMon}`;
+    
+    // điểm hệ 4 <2
+    var soSvCanhBao = 0;
+    for (var i = 0; i < soSv;i++){
+        if (now.students[i].scoresTb1[6] < 2 && now.students[i].scoresTb1[6] >= 1)
+            soSvCanhBao++;
+    };
+    if(document.querySelector('.status-danger h3'))
+        document.querySelector('.status-danger h3').innerText = `${soSvCanhBao}`;
+    
     if (soSv > 0) {
-        if(document.querySelector('.status-primary h3'))
-            document.querySelector('.status-primary h3').innerText = `${soSv}`;
-        // điểm tổng kết cả năm he 4 nhỏ hơn 1 
-        var soSvTamNgungHoc = 0;
-        for (var i = 0; i < soSv;i++){
-            if (now.students[i].scoresTb1[6] < 1)
-                soSvTamNgungHoc++;
-        };
-        if(document.querySelector('.status-warning h3'))
-            document.querySelector('.status-warning h3').innerText = `${soSvTamNgungHoc}`;
-        // điểm kthp nhỏ hơn 4
-        var soSvNoMon = 0;
-        for (var i = 0; i < soSv;i++){
-            if (now.students[i].scoresTb2[2] < 4 ||
-                now.students[i].scoresTb2[5] < 4 ||
-                now.students[i].scoresTb2[8] < 4 ||
-                now.students[i].scoresTb2[11] < 4 ||
-                now.students[i].scoresTb2[14] < 4 ||
-                now.students[i].scoresTb2[17] < 4 ||
-                now.students[i].scoresTb2[20] < 4 ||
-                now.students[i].scoresTb2[23] < 4 ||
-                now.students[i].scoresTb2[26] < 4 ||
-                now.students[i].scoresTb2[29] < 4 ||
-                now.students[i].scoresTb2[32] < 4 ||
-                now.students[i].scoresTb2[35] < 4 ||
-                now.students[i].scoresTb2[38] < 4 ||
-                now.students[i].scoresTb2[41] < 4 ||
-                now.students[i].scoresTb2[44] < 4 ||
-                now.students[i].scoresTb2[47] < 4 ||
-                now.students[i].scoresTb2[50] < 4 ||
-                now.students[i].scoresTb2[53] < 4
-                )
-                soSvNoMon++;
-        };
-        if(document.querySelector('.status-success h3'))
-            document.querySelector('.status-success h3').innerText = `${soSvNoMon}`;
-        
-        // điểm hệ 4 <2
-        var soSvCanhBao = 0;
-        for (var i = 0; i < soSv;i++){
-            if (now.students[i].scoresTb1[6] < 2 && now.students[i].scoresTb1[6] >= 1)
-                soSvCanhBao++;
-        };
-        if(document.querySelector('.status-danger h3'))
-            document.querySelector('.status-danger h3').innerText = `${soSvCanhBao}`;
         var listStudentsTop = now.students;
         for (var i = 0; i < listStudentsTop.length;i++){
             for (var j = 0; j < listStudentsTop.length;j++ ){
@@ -182,7 +183,7 @@ if (teachers.length > 0) {
             };
         };
         var innerHTMLListStudentTop = '';
-        var min = listStudentsTop.length > 5 ? 5 : listStudentsTop.length;
+        var min = listStudentsTop.length;
         for (var i = 0; i < min; i++){
             innerHTMLListStudentTop +=`<tr>
                     <td>${i+1}</td>
@@ -256,12 +257,20 @@ if (teachers.length > 0) {
                     <button type="button" class="btn btn-secondary btn-sm" onclick="suaDiem(${i});">
                         Sửa
                     </button>
+                    <button type="button" class="btn btn-secondary btn-sm" onclick="xoaDiem(${i});">
+                        Xóa
+                    </button>
+                    <button type="button" class="btn btn-secondary btn-sm" onclick="saoChepDiem(${i});">
+                        Sao chép
+                    </button>
                     </td>
                 </tr>
             `
         };
         if(document.querySelector('.list-student-tbody'))
             document.querySelector('.list-student-tbody').innerHTML = innerHTMLListStudent;
+    } else {
+        
     }
 
 }
@@ -275,4 +284,31 @@ function xemDiem(i) {
 function suaDiem(i) {
     localStorage.setItem('sinhVienThu', `${i}`);
     location.href='./inputScores.html'
+}
+
+function xoaDiem(i) {
+    var isDel = confirm('Bạn có chắc muốn xóa sinh viên này không');
+    if (isDel) {
+        var now = JSON.parse(localStorage.getItem('now'));
+        var teachers = JSON.parse(localStorage.getItem('teachers'));
+        teachers[now].students.splice(i, 1);
+        localStorage.setItem('teachers', JSON.stringify(teachers));
+        location.reload();
+    }
+}
+function saoChepDiem(i) {
+    document.querySelector('#createStudent').style.display = 'block';
+    var now = JSON.parse(localStorage.getItem('now'));
+    var teachers = JSON.parse(localStorage.getItem('teachers'));
+    var tempstd = teachers[now].students[i];
+    document.querySelector('#full-name').value = tempstd.name;
+    document.querySelector('#user-name').value = tempstd.userName;
+    document.querySelector('#password').value = tempstd.passWord;
+    document.querySelector('#confirm-password').value = tempstd.passWord;
+
+    var ip = document.querySelectorAll('.score table td input');
+    for (var i = 0; i < ip.length / 2;i++){
+        ip[i*2].value = tempstd.scoresTb2[i * 3];
+        ip[i*2+1].value = tempstd.scoresTb2[i * 3+1];
+    };
 }

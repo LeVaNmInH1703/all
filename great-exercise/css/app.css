@@ -127,13 +127,13 @@ select {
 
 #createStudent {
   max-width: 100%;
-  width: 700px;
+  width: 70%;
+  margin: auto;
   border: 1px solid #212529;
   box-shadow: 0 0 3px #212529;
   padding: 10px;
   border-radius: 3px;
 }
-
 
 
 

@@ -34,11 +34,15 @@ function createStudent() {
 
     if (ck) {
         var ck2 = 1;
-        for (var i = 0; i < teachers.length;i++){
+        for (var i = 0; i < teachers.length; i++){
+            if (userName.value == teachers[i].userName && passWord.value == teachers[i].passWord) {
+                alert("Tên đăng nhập và mật khẩu đã được sử dụng. Vui lòng chọn tài khoản khác nhé!");
+                    ck2 = 0;
+                    break;
+            }
             for (var j = 0; j < teachers[i].students.length;j++){
-                if ((userName.value == teachers[i].userName && passWord.value == teachers[i].passWord) ||
-                (userName.value == teachers[i].students[j].userName && passWord.value == teachers[i].students[j].passWord)) {
-                    alert("Tên đăng nhập và mật khẩu đã được sử dụng. Vui lòng chọn tài khoản khác!");
+                if (userName.value == teachers[i].students[j].userName && passWord.value == teachers[i].students[j].passWord) {
+                    alert("Tên đăng nhập và mật khẩu đã được sử dụng. Vui lòng chọn tài khoản khác nhé!");
                     ck2 = 0;
                     break;
                 }

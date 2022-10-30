@@ -17,8 +17,9 @@ if (localStorage.getItem('bayGioLa') == 'Giáo Viên') {
     document.querySelector('#hello-user').style.display = 'block';
     document.querySelector('#hello-user').innerText = 'Xin chào: ' + (teachers[now].name ? teachers[now].name : '');
     document.querySelector('#log-out-btn').style.display = 'block';
-    document.querySelector('#editScores-teacher').style.display = 'block';
-    document.querySelector('#showScores').style.display = 'block';
+    document.querySelector('#editScores-teacher').style.display = 'initial';
+    document.querySelector('#showScores').style.display = 'initial';
+    document.querySelector('#changePassword-btn').style.display = 'block';
 }
 if (localStorage.getItem('bayGioLa') == 'Sinh Viên') {
     var teachers = JSON.parse(localStorage.getItem("teachers"));
@@ -29,13 +30,16 @@ if (localStorage.getItem('bayGioLa') == 'Sinh Viên') {
     document.querySelector('#hello-user').style.display = 'block';
     document.querySelector('#hello-user').innerText = 'Xin chào: ' + (teachers[now].students[sinhVienThu].name?teachers[now].students[sinhVienThu].name:'');
     document.querySelector('#log-out-btn').style.display = 'block';
-    document.querySelector('#showScores').style.display = 'block';
+    document.querySelector('#showScores').style.display = 'initial';
+    document.querySelector('#changePassword-btn').style.display = 'block';
+
 }
 if (localStorage.getItem('bayGioLa') == '') {
     document.querySelector('#btn-sign-in').style.display = 'block';
     document.querySelector('#btn-sign-up').style.display = 'block';
     document.querySelector('#hello-user').style.display = 'none';
     document.querySelector('#log-out-btn').style.display = 'none';
+    document.querySelector('#changePassword-btn').style.display = 'none';
 }
 
 var loginPage = document.getElementById('login');
@@ -66,6 +70,7 @@ function Close(name) {
 //
 var label = document.querySelectorAll(".sign-up__account label,.login__account label");
 var input = document.querySelectorAll(".sign-up__account input,.login__account input");
+
 for (let i = 0; i < label.length; i++){
     input[i].onblur = function () {
         if (input[i].value == '') {
