@@ -837,7 +837,7 @@ body{
     }
     .body__news{
         margin: auto;
-        width: 70%;
+        width: 100%;
     }
     .body__news-img{
         margin-top: 5%;
