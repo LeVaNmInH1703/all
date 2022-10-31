@@ -80,7 +80,16 @@
     >
       Trang chủ
     </button>
-
+    <input type="text" placeholder="Nhập họ và tên" id="fullname" />
+    <button
+      type="button"
+      class="btn btn-primary"
+      onclick="saveTeacher();"
+      style="margin-bottom: 10px"
+      title="click để lưu họ tên"
+    >
+      Lưu
+    </button>
     <div class="table-container">
       <div class="card">
         <div class="card-header">
@@ -175,6 +184,31 @@
     </div>
 
     <div id="createStudent" style="display: none">
+      <button
+        type="button"
+        class="btn btn-primary"
+        id="create5Student"
+        onclick="createNStudents(5);"
+      >
+        tạo mới 5 sinh viên
+      </button>
+      <button
+        type="button"
+        class="btn btn-primary"
+        id="create10Student"
+        onclick="createNStudents(10);"
+      >
+        tạo mới 10 sinh viên
+      </button>
+      <button
+        type="button"
+        class="btn btn-primary"
+        id="create15Student"
+        onclick="createNStudents(15);"
+      >
+        tạo mới 15 sinh viên
+      </button>
+
       <div class="info-student">
         <input
           type="text"

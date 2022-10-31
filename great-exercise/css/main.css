@@ -330,7 +330,7 @@ body{
     transition: 0.5s;
 }
 .body__news:hover .layout-news-img{
-    top: 54%;
+    top: 45%;
 }
 .body-news__link{
     z-index: 1;
