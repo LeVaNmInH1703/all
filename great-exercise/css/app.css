@@ -1,9 +1,9 @@
-*{
+* {
   margin: 0;
   padding: 0;
 }
 body {
-  padding-top:10px ;
+  padding-top: 10px;
   font-family: "Roboto", sans-serif;
   max-width: 1200px;
   margin: 0 auto;
@@ -126,17 +126,15 @@ select {
 /* createStudent */
 
 #createStudent {
+  display: none;
   max-width: 100%;
   width: 70%;
   margin: auto;
-  border: 1px solid #212529;
-  box-shadow: 0 0 3px #212529;
-  padding: 10px;
-  border-radius: 3px;
+  border: 1px solid #f1f1f1;
+  box-shadow: 4px 4px 8px 4px rgba(0, 0, 0, 0.2);
+  padding: 50px;
+  border-radius: 8px;
 }
-
-
-
 
 /* responsive */
 @media (max-width: 904px) {
@@ -172,4 +170,24 @@ select {
   .list-student tr th:nth-child(5) {
     display: none;
   }
+}
+/* THÊM */
+.action {
+  display: flex;
+  margin-bottom: 20px;
+}
+.action input {
+  width: 500px;
+}
+.create-student-top {
+  display: flex;
+  justify-content: space-between;
+}
+.create-student-top input {
+  width: 500px;
+}
+.create-student-button {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }

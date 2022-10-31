@@ -310,4 +310,5 @@ function saoChepDiem(i) {
     ip[i * 2].value = tempstd.scoresTb2[i * 3];
     ip[i * 2 + 1].value = tempstd.scoresTb2[i * 3 + 1];
   }
+  location.href = "#createStudent";
 }

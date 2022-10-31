@@ -25,7 +25,7 @@
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="./css/app.css" />
+    <link rel="stylesheet" href="css/app.css" />
 
     <title>.: Danh Sách Sinh Viên :.</title>
     <link rel="icon" href="images/logo-big.png" />
@@ -71,25 +71,31 @@
       </div>
     </div>
 
-    <button
-      type="button"
-      class="btn btn-primary"
-      onclick="location.href='./index.html'"
-      style="margin-bottom: 10px"
-      title="trở về trang chủ"
-    >
-      Trang chủ
-    </button>
-    <input type="text" placeholder="Nhập họ và tên" id="fullname" />
-    <button
-      type="button"
-      class="btn btn-primary"
-      onclick="saveTeacher();"
-      style="margin-bottom: 10px"
-      title="click để lưu họ tên"
-    >
-      Lưu
-    </button>
+    <div class="action">
+      <button
+        type="button"
+        class="btn btn-primary"
+        onclick="location.href='./index.html'"
+        style="margin-bottom: 10px"
+        title="trở về trang chủ"
+      >
+        Trang chủ
+      </button>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Nhập tên sinh viên"
+      />
+      <button
+        type="button"
+        class="btn btn-primary"
+        onclick="saveTeacher();"
+        style="margin-bottom: 10px"
+        title="click để lưu họ tên"
+      >
+        Lưu
+      </button>
+    </div>
     <div class="table-container">
       <div class="card">
         <div class="card-header">
@@ -183,57 +189,61 @@
       </label>
     </div>
 
-    <div id="createStudent" style="display: none">
-      <button
-        type="button"
-        class="btn btn-primary"
-        id="create5Student"
-        onclick="createNStudents(5);"
-      >
-        tạo mới 5 sinh viên
-      </button>
-      <button
-        type="button"
-        class="btn btn-primary"
-        id="create10Student"
-        onclick="createNStudents(10);"
-      >
-        tạo mới 10 sinh viên
-      </button>
-      <button
-        type="button"
-        class="btn btn-primary"
-        id="create15Student"
-        onclick="createNStudents(15);"
-      >
-        tạo mới 15 sinh viên
-      </button>
+    <div id="createStudent">
+      <div class="create-student-top">
+        <div class="create-student-button">
+          <button
+            type="button"
+            class="btn btn-primary"
+            id="create5Student"
+            onclick="createNStudents(5);"
+          >
+            tạo mới 5 sinh viên
+          </button>
+          <button
+            type="button"
+            class="btn btn-primary"
+            id="create10Student"
+            onclick="createNStudents(10);"
+          >
+            tạo mới 10 sinh viên
+          </button>
+          <button
+            type="button"
+            class="btn btn-primary"
+            id="create15Student"
+            onclick="createNStudents(15);"
+          >
+            tạo mới 15 sinh viên
+          </button>
+        </div>
 
-      <div class="info-student">
-        <input
-          type="text"
-          placeholder="Họ và Tên"
-          id="full-name"
-          class="form-control"
-        />
-        <input
-          type="text"
-          placeholder="Tên đăng nhập"
-          id="user-name"
-          class="form-control"
-        />
-        <input
-          type="password"
-          placeholder="Mật khẩu"
-          id="password"
-          class="form-control"
-        />
-        <input
-          type="password"
-          placeholder="Nhập lại mật khẩu"
-          id="confirm-password"
-          class="form-control"
-        />
+        <div class="info-student">
+          <input
+            type="text"
+            placeholder="Họ và Tên"
+            id="full-name"
+            class="form-control"
+          />
+          <input
+            type="text"
+            placeholder="Tên đăng nhập"
+            id="user-name"
+            class="form-control"
+          />
+          <input
+            type="password"
+            placeholder="Mật khẩu"
+            id="password"
+            class="form-control"
+          />
+          <input
+            type="password"
+            placeholder="Nhập lại mật khẩu"
+            id="confirm-password"
+            class="form-control"
+          />
+        </div>
       </div>
 
       <div class="score">
@@ -245,93 +255,165 @@
           </tr>
           <tr>
             <td>GDTC F1</td>
-            <td><input type="text" /></td>
-            <td><input type="text" /></td>
+            <td>
+              <input type="text" class="form-control" placeholder="Nhập điểm" />
+            </td>
+            <td>
+              <input type="text" class="form-control" placeholder="Nhập điểm" />
+            </td>
           </tr>
           <tr>
             <td>Giải Tích 1</td>
-            <td><input type="text" /></td>
-            <td><input type="text" /></td>
+            <td>
+              <input type="text" class="form-control" placeholder="Nhập điểm" />
+            </td>
+            <td>
+              <input type="text" class="form-control" placeholder="Nhập điểm" />
+            </td>
           </tr>
           <tr>
             <td>Nhập Môn</td>
-            <td><input type="text" /></td>
-            <td><input type="text" /></td>
+            <td>
+              <input type="text" class="form-control" placeholder="Nhập điểm" />
+            </td>
+            <td>
+              <input type="text" class="form-control" placeholder="Nhập điểm" />
+            </td>
           </tr>
           <tr>
             <td>Triết</td>
-            <td><input type="text" /></td>
-            <td><input type="text" /></td>
+            <td>
+              <input type="text" class="form-control" placeholder="Nhập điểm" />
+            </td>
+            <td>
+              <input type="text" class="form-control" placeholder="Nhập điểm" />
+            </td>
           </tr>
           <tr>
             <td>Tin Đại Cương</td>
-            <td><input type="text" /></td>
-            <td><input type="text" /></td>
+            <td>
+              <input type="text" class="form-control" placeholder="Nhập điểm" />
+            </td>
+            <td>
+              <input type="text" class="form-control" placeholder="Nhập điểm" />
+            </td>
           </tr>
           <tr>
             <td>Bảo Trì Hệ Thống</td>
-            <td><input type="text" /></td>
-            <td><input type="text" /></td>
+            <td>
+              <input type="text" class="form-control" placeholder="Nhập điểm" />
+            </td>
+            <td>
+              <input type="text" class="form-control" placeholder="Nhập điểm" />
+            </td>
           </tr>
           <tr>
             <td>Đại Số Tuyến Tính</td>
-            <td><input type="text" /></td>
-            <td><input type="text" /></td>
+            <td>
+              <input type="text" class="form-control" placeholder="Nhập điểm" />
+            </td>
+            <td>
+              <input type="text" class="form-control" placeholder="Nhập điểm" />
+            </td>
           </tr>
           <tr>
             <td>Vật Lý</td>
-            <td><input type="text" /></td>
-            <td><input type="text" /></td>
+            <td>
+              <input type="text" class="form-control" placeholder="Nhập điểm" />
+            </td>
+            <td>
+              <input type="text" class="form-control" placeholder="Nhập điểm" />
+            </td>
           </tr>
           <tr>
             <td>GDTC F2</td>
-            <td><input type="text" /></td>
-            <td><input type="text" /></td>
+            <td>
+              <input type="text" class="form-control" placeholder="Nhập điểm" />
+            </td>
+            <td>
+              <input type="text" class="form-control" placeholder="Nhập điểm" />
+            </td>
           </tr>
           <tr>
             <td>Kĩ Thuật Lập Trình</td>
-            <td><input type="text" /></td>
-            <td><input type="text" /></td>
+            <td>
+              <input type="text" class="form-control" placeholder="Nhập điểm" />
+            </td>
+            <td>
+              <input type="text" class="form-control" placeholder="Nhập điểm" />
+            </td>
           </tr>
           <tr>
             <td>Kinh Tế Chính Trị</td>
-            <td><input type="text" /></td>
-            <td><input type="text" /></td>
+            <td>
+              <input type="text" class="form-control" placeholder="Nhập điểm" />
+            </td>
+            <td>
+              <input type="text" class="form-control" placeholder="Nhập điểm" />
+            </td>
           </tr>
           <tr>
             <td>QPAN 3</td>
-            <td><input type="text" /></td>
-            <td><input type="text" /></td>
+            <td>
+              <input type="text" class="form-control" placeholder="Nhập điểm" />
+            </td>
+            <td>
+              <input type="text" class="form-control" placeholder="Nhập điểm" />
+            </td>
           </tr>
           <tr>
             <td>QPAN 4</td>
-            <td><input type="text" /></td>
-            <td><input type="text" /></td>
+            <td>
+              <input type="text" class="form-control" placeholder="Nhập điểm" />
+            </td>
+            <td>
+              <input type="text" class="form-control" placeholder="Nhập điểm" />
+            </td>
           </tr>
           <tr>
             <td>Xác Suất Thống Kê</td>
-            <td><input type="text" /></td>
-            <td><input type="text" /></td>
+            <td>
+              <input type="text" class="form-control" placeholder="Nhập điểm" />
+            </td>
+            <td>
+              <input type="text" class="form-control" placeholder="Nhập điểm" />
+            </td>
           </tr>
           <tr>
             <td>Chủ Nghĩa Xã Hội</td>
-            <td><input type="text" /></td>
-            <td><input type="text" /></td>
+            <td>
+              <input type="text" class="form-control" placeholder="Nhập điểm" />
+            </td>
+            <td>
+              <input type="text" class="form-control" placeholder="Nhập điểm" />
+            </td>
           </tr>
           <tr>
             <td>QPAN 2</td>
-            <td><input type="text" /></td>
-            <td><input type="text" /></td>
+            <td>
+              <input type="text" class="form-control" placeholder="Nhập điểm" />
+            </td>
+            <td>
+              <input type="text" class="form-control" placeholder="Nhập điểm" />
+            </td>
           </tr>
           <tr>
             <td>Giải Tích 2</td>
-            <td><input type="text" /></td>
-            <td><input type="text" /></td>
+            <td>
+              <input type="text" class="form-control" placeholder="Nhập điểm" />
+            </td>
+            <td>
+              <input type="text" class="form-control" placeholder="Nhập điểm" />
+            </td>
           </tr>
           <tr>
             <td>QPAN 1</td>
-            <td><input type="text" /></td>
-            <td><input type="text" /></td>
+            <td>
+              <input type="text" class="form-control" placeholder="Nhập điểm" />
+            </td>
+            <td>
+              <input type="text" class="form-control" placeholder="Nhập điểm" />
+            </td>
           </tr>
         </table>
         <input
