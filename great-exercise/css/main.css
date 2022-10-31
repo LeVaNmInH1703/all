@@ -804,7 +804,10 @@ body{
         height: 30rem;
     }
     .layout-news-img{
-        width: 40%;
+        width: 100%;
+    }
+    .body__news:hover .layout-news-img{
+        top: 55%;
     }
  }
 
@@ -845,6 +848,9 @@ body{
     }
     .layout-news-img{
         width: 100%;
+    }
+    .body__news:hover .layout-news-img{
+        top: 70%;
     }
     .content1{
         padding: 0;
