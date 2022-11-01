@@ -788,6 +788,10 @@ body{
     }
     .body__big-img-ctn{
         width: 100%;
+        
+    }
+    .body__big-img {
+        height: 60vw;
     }
     .body__the-news-ctn{
         width: 100%;
@@ -827,6 +831,9 @@ body{
     }
     .body{
         flex-direction: column;
+    }
+    .body__big-img {
+        height: 60vw;
     }
     .body__big-img-ctn{
         width: 100%;
