@@ -20,7 +20,7 @@ if (localStorage.getItem("bayGioLa") == "Giáo Viên") {
     "Xin chào: " + (teachers[now].name ? teachers[now].name : "");
   document.querySelector("#log-out-btn").style.display = "block";
   document.querySelector("#editScores-teacher").style.display = "initial";
-  document.querySelector("#showScores").style.display = "initial";
+  document.querySelector("#showScores").style.display = "none";
   document.querySelector("#changePassword-btn").style.display = "block";
 }
 if (localStorage.getItem("bayGioLa") == "Sinh Viên") {
