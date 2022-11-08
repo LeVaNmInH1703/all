@@ -18,13 +18,11 @@ var allScore1 = [...tbtl10, ...tbtl4, ...tbc10, ...tbc4];
 for (var i = 0; i < allScore1.length; i++) {
   allScore1[i].innerText = SV.scoresTb1[i];
 }
-
 var dqt = document.querySelectorAll(".table2__table tr td:nth-child(11) input");
 var thi = document.querySelectorAll(".table2__table tr td:nth-child(12) input");
-var ipScore = [...dqt, ...thi];
-for (var i = 0; i < ipScore.length / 2; i++) {
-  ipScore[i * 2].value = SV.scoresTb2[i * 3 + 0];
-  ipScore[i * 2 + 1].value = SV.scoresTb2[i * 3 + 1];
+for (var i = 0; i < dqt.length; i++) {
+  dqt[i].value = SV.scoresTb2[i * 3];
+  thi[i].value = SV.scoresTb2[i * 3 + 1];
 }
 
 var kthp = document.querySelectorAll(".table2__table tr td:nth-child(13)");
@@ -32,14 +30,27 @@ for (var i = 0; i < kthp.length; i++) {
   kthp[i].innerText = SV.scoresTb2[i * 3 + 2];
 }
 
-var isSave = 0;
+var isSave = true;
+for (var i = 0; i < dqt.length; i++) {
+  dqt[i].onchange = function () {
+    isSave = false;
+  };
+  thi[i].onchange = function () {
+    isSave = false;
+  };
+}
 
 function saveInput() {
   SV.name = document.querySelector("#user-name").value;
-  isSave = 1;
-  for (var i = 0; i < ipScore.length / 2; i++) {
-    SV.scoresTb2[i * 3 + 0] = Math.round(ipScore[i * 2].value * 100) / 100;
-    SV.scoresTb2[i * 3 + 1] = Math.round(ipScore[i * 2 + 1].value * 100) / 100;
+  for (var i = 0; i < dqt.length; i++) {
+    SV.scoresTb2[i * 3 + 0] = Math.min(
+      Math.round(parseFloat(dqt[i].value) * 100) / 100,
+      10
+    );
+    SV.scoresTb2[i * 3 + 1] = Math.min(
+      Math.round(parseFloat(thi[i].value) * 100) / 100,
+      10
+    );
     SV.scoresTb2[i * 3 + 2] =
       Math.round(
         ((SV.scoresTb2[i * 3 + 0] + SV.scoresTb2[i * 3 + 1]) / 2) * 100
@@ -93,6 +104,7 @@ function resetInput() {
 }
 
 function acceptLeave(index) {
+  console.log(isSave);
   if (index) {
     var isLv = 1;
     if (!isSave) {
