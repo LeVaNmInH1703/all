@@ -1,8 +1,3 @@
-var input = document.querySelector('input');
-var label = document.querySelector("label");
-
-
- function Close () {
-    console.log("blur");
-    input.value = "";
-}
+var i = "le van minh";
+if (i.indexOf("vannminh") > 0) console.log("có");
+else console.log("không");

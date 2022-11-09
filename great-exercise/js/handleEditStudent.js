@@ -116,7 +116,6 @@ function createStudent() {
         student.scoresTb1[i] =
           Math.round((student.scoresTb1[i - 4] / 2.5) * 100) / 100;
       }
-      console.log(teachers[now].students);
       teachers[now].students.push(student);
       localStorage.setItem("teachers", JSON.stringify(teachers));
       location.reload();
@@ -573,4 +572,43 @@ function createNStudents(n) {
       location.reload();
     }
   }
+}
+
+function findStudents() {
+  var teachers = JSON.parse(localStorage.getItem("teachers"));
+  var now = JSON.parse(localStorage.getItem("now"));
+  var students = teachers[now].students;
+  var listFindStudents = "";
+  var demStudents = 1;
+  let name = document.getElementById("find-student-name").value;
+  name = name.toLowerCase();
+  for (let i = 0; i < teachers[now].students.length; i++) {
+    let temp = teachers[now].students[i].name;
+    temp = temp.toLowerCase();
+    if (temp.indexOf(name, 0) >= 0) {
+      listFindStudents += `
+      <tr>
+          <th scope="row">${demStudents++}</th>
+          <td>${teachers[now].students[i].name}</td>
+          <td>${teachers[now].students[i].userName}</td>
+          <td>${teachers[now].students[i].passWord}</td>
+          <td>
+          <button type="button" class="btn btn-primary btn-sm" onclick="xemDiem(${i});">
+              Xem Điểm
+          </button>
+          <button type="button" class="btn btn-secondary btn-sm" onclick="suaDiem(${i});">
+              Sửa
+          </button>
+          <button type="button" class="btn btn-secondary btn-sm" onclick="xoaDiem(${i});">
+              Xóa
+          </button>
+          <button type="button" class="btn btn-secondary btn-sm" onclick="saoChepDiem(${i});">
+              Sao chép
+          </button>
+          </td>
+      </tr>
+  `;
+    }
+  }
+  document.querySelector(".list-student-tbody").innerHTML = listFindStudents;
 }
