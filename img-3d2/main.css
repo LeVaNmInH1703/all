@@ -43,13 +43,17 @@ body {
 }
 
 #drag-container p {
+  text-align: center;
+  width: 100px;
   position: absolute;
   top: 100%;
   left: 50%;
   transform: translate(-50%,-50%) rotateX(90deg);
   color: #fff;
 }
-
+#drag-container p span{
+  color: red;
+}
 /* cái nền */
 #ground {
     width: 900px;
